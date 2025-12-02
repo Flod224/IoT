@@ -10,15 +10,18 @@ from threading import Thread, Lock
 
 logger = logging.getLogger(__name__)
 
-# Tentative d'import des bibliothèques GPIO (optionnel si pas sur Pi)
+# Import des bibliothèques GPIO (requis)
 try:
     import RPi.GPIO as GPIO
     import adafruit_dht
     import board
     GPIO_AVAILABLE = True
-except ImportError:
+    logger.info("Bibliothèques GPIO chargées avec succès")
+except ImportError as e:
     GPIO_AVAILABLE = False
-    logger.warning("Bibliothèques GPIO non disponibles - mode simulation")
+    logger.error(f"ERREUR: Bibliothèques GPIO non disponibles: {e}")
+    logger.error("Installation requise: sudo apt-get install python3-rpi.gpio && pip install adafruit-circuitpython-dht")
+    raise ImportError("Bibliothèques GPIO requises non trouvées") from e
 
 
 class SensorReader:
@@ -79,35 +82,24 @@ class SensorReader:
     
     def _setup_gpio(self):
         """Configure les GPIO"""
-        if not GPIO_AVAILABLE:
-            logger.warning("GPIO non disponible - données simulées")
-            return
-        
         try:
             # DHT22
             dht_board_pin = getattr(board, f"D{self.dht_pin}")
             self._dht_device = adafruit_dht.DHT22(dht_board_pin, use_pulseio=False)
-            logger.info(f"DHT22 configuré sur GPIO {self.dht_pin}")
+            logger.info(f"✓ DHT22 configuré sur GPIO {self.dht_pin}")
             
             # Reed switch
             GPIO.setmode(GPIO.BCM)
             GPIO.setup(self.reed_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-            logger.info(f"Reed switch configuré sur GPIO {self.reed_pin}")
+            logger.info(f"✓ Reed switch configuré sur GPIO {self.reed_pin}")
             
         except Exception as e:
-            logger.error(f"Erreur configuration GPIO: {e}")
+            logger.error(f"✗ Erreur configuration GPIO: {e}")
+            logger.error(f"Vérifiez: 1) Connexions physiques, 2) Permissions (sudo usermod -a -G gpio $USER), 3) Numéros de pin")
             raise
     
     def _read_sensors(self):
         """Lit les capteurs une fois"""
-        if not GPIO_AVAILABLE:
-            # Simulation pour test hors Pi
-            import random
-            temp = round(20 + random.uniform(-2, 2), 1)
-            hum = round(45 + random.uniform(-5, 5), 1)
-            window = random.choice([True, False])
-            return temp, hum, window
-        
         try:
             # DHT22
             temp = self._dht_device.temperature
@@ -119,11 +111,12 @@ class SensorReader:
             return temp, hum, window
             
         except RuntimeError as e:
-            # DHT22 peut échouer occasionnellement
-            logger.debug(f"Erreur lecture DHT22 (normal): {e}")
+            # DHT22 peut échouer occasionnellement (timing)
+            logger.debug(f"Erreur temporaire DHT22: {e}")
             return None, None, None
         except Exception as e:
-            logger.error(f"Erreur lecture capteurs: {e}")
+            logger.error(f"✗ Erreur lecture capteurs: {e}")
+            logger.error(f"Vérifiez la connexion du DHT22 (pin GPIO {self.dht_pin}) et du reed switch (pin GPIO {self.reed_pin})")
             return None, None, None
     
     def _update_state(self, temp: Optional[float], hum: Optional[float], window: Optional[bool]):
@@ -137,6 +130,8 @@ class SensorReader:
                 self._error_count = 0
             else:
                 self._error_count += 1
+                if self._error_count % 10 == 0:
+                    logger.warning(f"⚠️ {self._error_count} échecs de lecture consécutifs - vérifiez les capteurs")
     
     def _run_loop(self):
         """Boucle de lecture (thread)"""
@@ -181,16 +176,15 @@ class SensorReader:
     
     def cleanup(self):
         """Nettoyage GPIO"""
-        if GPIO_AVAILABLE and self._dht_device:
+        if self._dht_device:
             try:
                 self._dht_device.exit()
-            except:
-                pass
+                logger.info("✓ DHT22 arrêté")
+            except Exception as e:
+                logger.debug(f"Erreur arrêt DHT22: {e}")
         
-        if GPIO_AVAILABLE:
-            try:
-                GPIO.cleanup()
-            except:
-                pass
-        
-        logger.info("GPIO nettoyé")
+        try:
+            GPIO.cleanup()
+            logger.info("✓ GPIO nettoyés")
+        except Exception as e:
+            logger.debug(f"Erreur nettoyage GPIO: {e}")

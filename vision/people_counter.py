@@ -99,7 +99,7 @@ class PeopleCounter:
             logger.info("Modèle chargé avec succès")
         except Exception as e:
             logger.error(f"Erreur chargement modèle: {e}")
-            sys.exit(1)
+            raise RuntimeError(f"Impossible de charger le modèle YOLO: {e}") from e
     
     def setup_camera(self):
         """Initialise la caméra"""
@@ -108,7 +108,7 @@ class PeopleCounter:
         
         if not self.cap.isOpened():
             logger.error("Impossible d'ouvrir la caméra")
-            sys.exit(1)
+            raise RuntimeError(f"Impossible d'ouvrir la caméra à l'index {self.config.cam_index}")
         
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, self.config.cam_width)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, self.config.cam_height)
@@ -117,7 +117,8 @@ class PeopleCounter:
         ret, frame = self.cap.read()
         if not ret:
             logger.error("Impossible de lire le flux caméra")
-            sys.exit(1)
+            self.cap.release()
+            raise RuntimeError("Impossible de lire le flux de la caméra")
         
         actual_width = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
         actual_height = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))

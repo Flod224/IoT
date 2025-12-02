@@ -64,8 +64,13 @@ async def lifespan(app: FastAPI):
             vision_counter = PeopleCounter(vision_config)
             vision_counter.start()
             logger.info("✓ Module vision YOLO démarré")
+        except RuntimeError as e:
+            logger.warning(f"⚠️  Module vision indisponible: {e}")
+            logger.info("Le backend continuera sans détection de personnes (capteurs uniquement)")
+            vision_counter = None
         except Exception as e:
-            logger.error(f"✗ Erreur démarrage vision: {e}", exc_info=True)
+            logger.error(f"✗ Erreur inattendue lors du démarrage vision: {e}", exc_info=True)
+            logger.info("Le backend continuera sans détection de personnes (capteurs uniquement)")
             vision_counter = None
     else:
         logger.info("Module vision désactivé")
