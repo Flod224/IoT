@@ -1,5 +1,15 @@
 """
 Script de test du backend (hors Raspberry Pi)
+
+NOTE IMPORTANTE:
+- Ce script teste la STRUCTURE du code, pas les vrais capteurs
+- Sur PC Windows: données SIMULÉES (pas de GPIO, pas de caméra)
+- Sur Raspberry Pi avec vrais capteurs: lancer le serveur complet (uvicorn)
+
+Capteurs testés:
+- DHT22: capteur température/humidité (valeurs simulées ici)
+- Reed switch: capteur magnétique fenêtre ouvert/fermé (valeurs simulées ici)
+- Vision YOLO: comptage personnes via webcam (désactivé dans ces tests)
 """
 
 import sys
@@ -34,22 +44,29 @@ def test_models():
 
 
 def test_sensor_simulation():
-    """Test du module capteurs en mode simulation"""
-    print("=== Test Sensors (simulation) ===")
+    """Test du module capteurs en mode simulation (pas de vrais GPIO)"""
+    print("=== Test Sensors (SIMULATION - pas de vrais capteurs) ===")
+    print("Sur PC Windows: génère des données aléatoires")
+    print("Sur Raspberry Pi: lirait les vrais GPIO DHT22 + reed switch\n")
+    
     from app.sensors import SensorReader
     
     reader = SensorReader(dht_pin=4, reed_pin=17, interval=2.0)
     reader.start()
     
+    print("Attente de 5 secondes pour collecter des données simulées...")
     time.sleep(5)
     
     data = reader.get_data()
-    print(f"Température: {data['temperature']}°C")
-    print(f"Humidité: {data['humidity']}%")
-    print(f"Fenêtre: {'ouverte' if data['window_open'] else 'fermée'}")
+    print(f"\nDonnées (SIMULÉES):")
+    print(f"  Température: {data['temperature']}°C (DHT22 simulated)")
+    print(f"  Humidité: {data['humidity']}% (DHT22 simulated)")
+    print(f"  Fenêtre: {'ouverte' if data['window_open'] else 'fermée'} (Reed switch simulated)")
+    print(f"  Dernière lecture: {data['last_update']}")
     
     reader.stop()
-    print("✓ Sensors OK\n")
+    print("\n✓ Structure du module capteurs OK")
+    print("  → Sur Pi avec vrais capteurs: remplacer simulation par GPIO.input()\n")
 
 
 def test_hyperplanning():
@@ -71,8 +88,11 @@ def test_hyperplanning():
 
 
 def test_integration():
-    """Test d'intégration (sans vision)"""
-    print("=== Test Intégration ===")
+    """Test d'intégration (sans caméra, capteurs simulés)"""
+    print("=== Test Intégration (SANS CAMÉRA RÉELLE) ===")
+    print("Vision: désactivée (pas de flux vidéo)")
+    print("Capteurs: simulés (pas de vrais GPIO)\n")
+    
     import os
     os.environ["VISION_ENABLED"] = "False"
     
@@ -81,6 +101,7 @@ def test_integration():
     from app.hyperplanning import HyperplanningClient
     
     # Démarrer services
+    print("Démarrage des services en arrière-plan...")
     sensors = SensorReader(settings.dht22_pin, settings.reed_switch_pin, 2.0)
     sensors.start()
     
@@ -88,21 +109,32 @@ def test_integration():
     hp.start()
     
     # Simuler agrégation
+    print("Collecte de données pendant 3 secondes...")
     time.sleep(3)
     
     sensor_data = sensors.get_data()
     hp_data = hp.get_status()
     
-    print("\nDonnées agrégées:")
-    print(f"  Capteurs: T={sensor_data['temperature']}°C, RH={sensor_data['humidity']}%")
-    print(f"  Hyperplanning: {hp_data['state']}")
-    print(f"  Personnes: 0 (vision désactivée)")
+    print("\n📊 Données agrégées (comme dans GET /status):")
+    print(f"  🌡️  Température: {sensor_data['temperature']}°C (simulé)")
+    print(f"  💧 Humidité: {sensor_data['humidity']}% (simulé)")
+    print(f"  🪟 Fenêtre: {'ouverte' if sensor_data['window_open'] else 'fermée'} (simulé)")
+    print(f"  📅 Hyperplanning: {hp_data['state']} (mock)")
+    print(f"  👥 Personnes: 0 (vision désactivée dans ce test)")
+    print(f"  🪑 Places libres: {settings.room_capacity}")
     
     # Nettoyage
     sensors.stop()
     hp.stop()
     
-    print("✓ Intégration OK\n")
+    print("\n✓ Intégration OK")
+    print("\n💡 Pour tester avec VRAIES données:")
+    print("   1. Sur Raspberry Pi")
+    print("   2. Brancher DHT22 sur GPIO 4")
+    print("   3. Brancher reed switch sur GPIO 17")
+    print("   4. Brancher webcam USB")
+    print("   5. Lancer: uvicorn app.main:app --host 0.0.0.0 --port 8000")
+    print("   6. GET http://raspberry-ip:8000/status\n")
 
 
 if __name__ == "__main__":
