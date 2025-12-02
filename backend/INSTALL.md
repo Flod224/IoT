@@ -1,10 +1,41 @@
 # SmartIGLab Backend
 
 Backend unifié FastAPI intégrant:
-- **Vision YOLO** (comptage personnes)
-- **Capteurs GPIO** (DHT22 température/humidité + reed switch fenêtre)
+- **Vision YOLO** (comptage personnes via webcam)
+- **Capteurs GPIO** (DHT22 température/humidité + reed switch état fenêtre)
 - **Hyperplanning** (état des cours)
 - **API REST** pour consultation externe
+
+## 🔍 Comment ça marche ?
+
+### Sur Raspberry Pi (production - vraies données)
+```
+Webcam USB ──► YOLO détection ──────┐
+                                     │
+DHT22 (GPIO 4) ──► Température/RH ──┼──► Backend ──► /status ──► Dashboard
+                                     │   (FastAPI)
+Reed (GPIO 17) ──► Fenêtre O/F ─────┘
+```
+
+1. **Webcam** → YOLO compte personnes → `people_count`
+2. **DHT22** → Lit température + humidité → `temperature`, `humidity`  
+3. **Reed switch** → Détecte fenêtre ouverte/fermée → `window_open`
+4. **API /status** → Agrège tout en JSON
+
+### Sur PC Windows (test - données simulées)
+Le backend peut tourner pour **tester la structure** mais:
+- ❌ Pas de caméra → vision désactivée
+- ❌ Pas de GPIO → capteurs simulés (valeurs aléatoires)
+- ✅ API fonctionne quand même
+
+### Capteurs utilisés
+
+**DHT22** = Capteur numérique température + humidité  
+**Reed switch** = Interrupteur magnétique (voir `docs/reed_switch_guide.md`)
+- Aimant sur fenêtre mobile
+- Reed sur cadre fixe  
+- Fermé = circuit fermé (LOW)
+- Ouvert = circuit ouvert (HIGH)
 
 ## Installation sur Raspberry Pi
 
