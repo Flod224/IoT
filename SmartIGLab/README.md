@@ -2,12 +2,13 @@
 
 Système IoT d'auditoire intelligent avec backend Raspberry Pi + dashboard ESP32.
 
-## 🚀 Démarrage rapide
+##  Démarrage rapide
 
 ### 1. Backend (Raspberry Pi)
 
 ```bash
-cd backend
+cloner le repo
+cd SmartIGLab/backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -33,7 +34,7 @@ Puis :
 2. Board : ESP32 Dev Module
 3. Upload
 
-## 📋 Fichiers à configurer
+## Fichiers à configurer
 
 | Fichier | Contenu |
 |---------|---------|
@@ -42,12 +43,7 @@ Puis :
 
 **Important** : Les `API_KEY` doivent être identiques dans les 2 fichiers.
 
-## 📚 Documentation détaillée
-
-- Backend : `backend/README.md`
-- Firmware : `firmware/esp32-webserver/README.md`
-
-## 🏗️ Architecture
+## Architecture
 
 ```
 Raspberry Pi (Backend)
@@ -62,7 +58,7 @@ ESP32 (Dashboard)
   └─ Serveur web :80
 ```
 
-## 📦 Dépendances
+## Dépendances
 
 **Backend** :
 ```bash
@@ -74,7 +70,7 @@ pip install -r backend/requirements.txt
 - Arduino IDE avec ESP32 core
 - Bibliothèque : ArduinoJson
 
-## 🔑 Générer clé API
+## Générer clé API
 
 ```bash
 openssl rand -hex 64
