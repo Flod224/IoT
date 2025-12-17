@@ -46,3 +46,52 @@ sudo apt-get install python3-rpi.gpio python3-dev
 pip install -r backend/requirements.txt
 ```
 
+## 🖥️ Configuration écran tactile
+
+### Désactiver la fonction tactile (via SSH)
+
+Si vous utilisez un écran tactile mais souhaitez désactiver le tactile :
+
+```bash
+# 1. Identifier le périphérique tactile
+xinput list
+
+# 2. Désactiver le tactile (remplacer <ID> par l'ID du périphérique)
+xinput disable <ID>
+
+# Exemple si l'ID est 6:
+xinput disable 6
+```
+
+**Méthode alternative (permanent au redémarrage) :**
+
+```bash
+# Créer fichier de configuration
+sudo nano /etc/X11/xorg.conf.d/99-no-touchscreen.conf
+```
+
+Ajouter ce contenu :
+```
+Section "InputClass"
+    Identifier "Disable Touchscreen"
+    MatchIsTouchscreen "on"
+    Option "Ignore" "on"
+EndSection
+```
+
+Puis redémarrer :
+```bash
+sudo reboot
+```
+
+### Réactiver le tactile
+
+```bash
+# Réactiver temporairement
+xinput enable <ID>
+
+# Réactiver définitivement
+sudo rm /etc/X11/xorg.conf.d/99-no-touchscreen.conf
+sudo reboot
+```
+
