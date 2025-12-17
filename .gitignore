@@ -1,0 +1,24 @@
+# SmartIGLab - Git Ignore
+
+# === SECRETS ===
+SmartIGLab/backend/app/.env
+SmartIGLab/firmware/esp32_webserver/config.h
+SmartIGLab/backend/schedule.ical
+
+# === PYTHON ===
+__pycache__/
+*.py[cod]
+venv/
+*.egg-info/
+
+# === VISION ===
+SmartIGLab/vision/*.pt
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# === LOGS ===
+*.log

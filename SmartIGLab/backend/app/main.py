@@ -1,6 +1,22 @@
 """
-Application principale FastAPI - SmartIGLab Backend
-Intègre: vision YOLO + capteurs GPIO + Hyperplanning + API
+SmartIGLab - Application Backend FastAPI
+=========================================
+API REST pour système IoT d'auditoire intelligent.
+
+Architecture:
+  - FastAPI avec lifespan management (démarrage/arrêt propre)
+  - 3 services en threads: Vision YOLO, Capteurs GPIO, Hyperplanning
+  - Rate limiting (60 req/min par IP) pour sécurité
+  - CORS restreint (GET uniquement)
+  - Authentification par clé API
+
+Endpoints:
+  GET /           - Info API
+  GET /status     - Données complètes (authentifié)
+  GET /healthz    - Health check (public)
+
+Déploiement:
+  uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 """
 
 import sys
@@ -9,9 +25,11 @@ import logging
 from pathlib import Path
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from collections import defaultdict
+import threading
 
 from app.config import settings
 from app.models import SystemStatus, HealthResponse, EnvironmentData, HyperplanningData
@@ -19,24 +37,41 @@ from app.sensors import SensorReader
 from app.hyperplanning import HyperplanningClient
 from app.people_counter import PeopleCounter, Config as VisionConfig
 import os
-            
-# Setup logging
+
+# === Configuration Logging ===
 logging.basicConfig(
     level=logging.INFO if not settings.debug else logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# Variables globales pour les services
-vision_counter = None
-sensor_reader = None
-hyperplanning_client = None
-app_start_time = time.time()
+# === Services Globaux ===
+# Partagés entre tous les endpoints (thread-safe)
+vision_counter = None  # Compteur de personnes YOLO
+sensor_reader = None  # Lecteur capteurs GPIO
+hyperplanning_client = None  # Client emploi du temps
+app_start_time = time.time()  # Timestamp démarrage pour uptime
+
+# === Rate Limiting (Sécurité anti-DoS) ===
+request_counts = defaultdict(list)  # {ip: [timestamp1, timestamp2, ...]}
+rate_limit_lock = threading.Lock()  # Thread-safe
+MAX_REQUESTS_PER_MINUTE = 60  # 1 requête/seconde maximum par IP
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Gestion du cycle de vie de l'application"""
+    """
+    Gestionnaire de cycle de vie FastAPI
+    
+    Démarrage (avant yield):
+      1. Initialise vision YOLO (si activée)
+      2. Démarre capteurs GPIO (DHT22 + reed)
+      3. Lance client Hyperplanning
+    
+    Arrêt (après yield):
+      - Arrête proprement tous les threads
+      - Libère ressources (caméra, GPIO)
+    """
     global vision_counter, sensor_reader, hyperplanning_client
     
     logger.info("=== Démarrage SmartIGLab Backend ===")
@@ -135,41 +170,86 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# Middleware rate limiting (cybersec)
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    """
+    Middleware de rate limiting (sécurité anti-DoS)
+    
+    Limite: 60 requêtes par minute par IP.
+    Retourne HTTP 429 si dépassé.
+    
+    Thread-safe avec lock pour accès concurrent.
+    """
+    client_ip = request.client.host
+    current_time = time.time()
+    
+    with rate_limit_lock:
+        # Nettoyer les anciennes entrées (> 1 minute)
+        request_counts[client_ip] = [t for t in request_counts[client_ip] if current_time - t < 60]
+        
+        # Vérifier limite
+        if len(request_counts[client_ip]) >= MAX_REQUESTS_PER_MINUTE:
+            logger.warning(f"Rate limit dépassé pour {client_ip}")
+            return JSONResponse(
+                status_code=429,
+                content={"detail": "Too many requests. Please slow down."}
+            )
+        
+        # Enregistrer requête
+        request_counts[client_ip].append(current_time)
+    
+    response = await call_next(request)
+    return response
+
 # CORS
 cors_origins = settings.cors_origins.split(",") if settings.cors_origins != "*" else ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET"],  # Seulement GET (lecture seule)
     allow_headers=["*"],
 )
 
 
 @app.get("/", include_in_schema=False)
 async def root():
-    """Page d'accueil"""
+    """
+    Page d'accueil de l'API
+    
+    Retourne infos basiques sans authentification.
+    """
     return {
         "name": "SmartIGLab API",
         "version": "1.0.0",
-        "endpoints": {
-            "status": "/status",
-            "health": "/healthz",
-            "docs": "/docs"
-        }
+        "status": "running"
     }
 
 
 @app.get("/status", response_model=SystemStatus)
-async def get_status():
+async def get_status(api_key: str = None):
     """
-    Retourne l'état complet du système
+    Endpoint principal: état complet du système
     
-    Combine:
-    - Comptage personnes (YOLO)
-    - Données environnementales (DHT22 + reed)
-    - État Hyperplanning
+    Sécurité:
+      - Authentification par clé API (query param)
+      - HTTP 403 si clé invalide ou absente
+    
+    Données retournées:
+      - people_count: Nombre de personnes détectées (YOLO)
+      - environment: Température, humidité, fenêtre (GPIO)
+      - hyperplanning: État cours (iCal/JSON)
+      - occupied: Salle occupée SI cours en cours (ignore people_count)
+      - free_seats: Places libres (capacity - people_count)
+    
+    Logique occupation:
+      OCCUPÉE = hyperplanning.state in ["course_en_cours", "course_prevue"]
+      (Le nombre de personnes n'affecte PAS le statut)
     """
+    # Vérification clé API
+    if api_key != settings.api_key:
+        raise HTTPException(status_code=403, detail="Invalid API key")
     
     # Données vision
     people_count = 0
@@ -202,20 +282,20 @@ async def get_status():
             state=hp_status["state"],
             title=hp_status["title"],
             start_time=hp_status["start_time"],
-            end_time=hp_status["end_time"]
+            end_time=hp_status["end_time"],
+            professor=hp_status["professor"]
         )
     
     # Calcul occupation
     free_seats = max(0, settings.room_capacity - people_count)
     
     # Règle occupation:
-    # - Si cours en cours/prévu selon Hyperplanning → occupé
-    # - Sinon basé sur détection (> 0 personnes)
+    # Salle LIBRE = pas de cours en hyperplanning (peu importe le nombre de personnes)
+    # Salle OCCUPÉE = cours en cours selon hyperplanning
     occupied = False
     if hp_data.state in ["course_en_cours", "course_prevue"]:
         occupied = True
-    elif people_count > 0:
-        occupied = True
+    # Note: on ignore people_count pour la détermination d'occupation
     
     return SystemStatus(
         occupied=occupied,
@@ -232,7 +312,16 @@ async def get_status():
 @app.get("/healthz", response_model=HealthResponse)
 async def healthcheck():
     """
-    Health check pour monitoring
+    Endpoint de health check (monitoring)
+    
+    Accessible sans authentification.
+    Utile pour supervision externe (Nagios, Prometheus, etc.).
+    
+    Returns:
+      - status: "healthy" si au moins un service tourne
+      - vision_running: Système vision actif
+      - sensors_running: Capteurs GPIO actifs
+      - uptime: Secondes depuis démarrage
     """
     vision_ok = vision_counter is not None and vision_counter._running if vision_counter else False
     sensors_ok = sensor_reader is not None and sensor_reader._running if sensor_reader else False
@@ -247,31 +336,14 @@ async def healthcheck():
     )
 
 
-@app.get("/metrics")
-async def metrics():
-    """
-    Métriques détaillées pour monitoring
-    """
-    vision_status = vision_counter.get_status() if vision_counter else {}
-    sensor_data = sensor_reader.get_data() if sensor_reader else {}
-    hp_status = hyperplanning_client.get_status() if hyperplanning_client else {}
-    
-    return {
-        "vision": vision_status,
-        "sensors": sensor_data,
-        "hyperplanning": hp_status,
-        "uptime": time.time() - app_start_time,
-        "config": {
-            "capacity": settings.room_capacity,
-            "vision_enabled": settings.vision_enabled,
-            "hyperplanning_enabled": settings.hyperplanning_enabled
-        }
-    }
-
-
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
-    """Handler global pour les exceptions"""
+    """
+    Gestionnaire d'erreurs global (sécurité)
+    
+    Log l'erreur complète côté serveur mais retourne
+    un message générique au client (pas de disclosure).
+    """
     logger.error(f"Erreur non gérée: {exc}", exc_info=True)
     return JSONResponse(
         status_code=500,

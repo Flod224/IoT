@@ -1,6 +1,13 @@
 """
-Module de lecture des capteurs GPIO (DHT22 + reed switch)
-Compatible Raspberry Pi uniquement
+SmartIGLab - Lecteur de capteurs GPIO
+======================================
+Compatible Raspberry Pi uniquement (numérotation BCM)
+
+Capteurs supportés:
+  - DHT22: Température et humidité
+  - Reed switch: Détection ouverture fenêtre
+
+Thread-safe avec lecture automatique en arrière-plan.
 """
 
 import time
@@ -10,28 +17,41 @@ from threading import Thread, Lock
 
 logger = logging.getLogger(__name__)
 
-# Import des bibliothèques GPIO
+# Import des bibliothèques GPIO (optionnelles en développement)
 try:
     import RPi.GPIO as GPIO
     import adafruit_dht
     import board
     GPIO_AVAILABLE = True
-    logger.info("✓ Bibliothèques GPIO chargées avec succès")
+    logger.info("✓ Bibliothèques GPIO chargées")
 except ImportError as e:
     GPIO_AVAILABLE = False
-    logger.warning("⚠️  Bibliothèques GPIO non disponibles - Capteurs désactivés")
+    logger.warning("⚠️  GPIO non disponibles - Capteurs désactivés")
     logger.warning(f"Raison: {e}")
     logger.warning("Installation sur Raspberry Pi:")
     logger.warning("  1. sudo apt-get update")
     logger.warning("  2. sudo apt-get install python3-rpi.gpio python3-dev")
     logger.warning("  3. pip install adafruit-circuitpython-dht")
-    logger.warning("Le backend continuera sans capteurs GPIO")
+    logger.warning("Le backend continuera sans capteurs")
 
 
 class SensorReader:
-    """Lecteur de capteurs GPIO (DHT22 + reed switch)"""
+    """
+    Lecteur de capteurs environnementaux GPIO
+    
+    Thread-safe avec boucle de lecture automatique en arrière-plan.
+    Gère les erreurs temporaires du DHT22 (courantes avec ce capteur).
+    """
     
     def __init__(self, dht_pin: int, reed_pin: int, interval: float = 10.0):
+        """
+        Initialise le lecteur de capteurs
+        
+        Args:
+            dht_pin: Numéro GPIO BCM pour DHT22 (défaut: 4)
+            reed_pin: Numéro GPIO BCM pour reed switch (défaut: 17)
+            interval: Intervalle de lecture en secondes (défaut: 10s)
+        """
         self.dht_pin = dht_pin
         self.reed_pin = reed_pin
         self.interval = interval
@@ -74,7 +94,14 @@ class SensorReader:
             return self._last_update
     
     def get_data(self) -> dict:
-        """Retourne toutes les données (thread-safe)"""
+        """
+        Retourne toutes les données des capteurs
+        
+        Thread-safe avec lock pour garantir la cohérence.
+        
+        Returns:
+            dict avec temperature, humidity, window_open, last_update, error_count
+        """
         with self._lock:
             return {
                 "temperature": self._temperature,
@@ -85,7 +112,15 @@ class SensorReader:
             }
     
     def _setup_gpio(self):
-        """Configure les GPIO"""
+        """
+        Configure les pins GPIO du Raspberry Pi
+        
+        - DHT22: Utilise board.Dxx pour la compatibilité Adafruit
+        - Reed switch: Configuré en INPUT avec pull-up (HIGH = ouvert)
+        
+        Raises:
+            Exception si les pins sont mal configurés ou déjà utilisés
+        """
         if not GPIO_AVAILABLE:
             logger.warning("⚠️  GPIO non disponibles - capteurs désactivés")
             return
@@ -107,7 +142,15 @@ class SensorReader:
             raise
     
     def _read_sensors(self):
-        """Lit les capteurs une fois"""
+        """
+        Effectue une lecture unique des capteurs
+        
+        Le DHT22 peut échouer occasionnellement (timing capricieux).
+        Les erreurs temporaires sont normales et gérées automatiquement.
+        
+        Returns:
+            tuple (temperature, humidity, window_state) ou (None, None, None) si erreur
+        """
         if not GPIO_AVAILABLE:
             # GPIO non disponibles - retourner None
             return None, None, None
@@ -132,7 +175,17 @@ class SensorReader:
             return None, None, None
     
     def _update_state(self, temp: Optional[float], hum: Optional[float], window: Optional[bool]):
-        """Met à jour l'état (thread-safe)"""
+        """
+        Met à jour l'état interne de manière thread-safe
+        
+        Arrondit les valeurs à 1 décimale. Compte les erreurs consécutives
+        pour alerter en cas de problème matériel persistant.
+        
+        Args:
+            temp: Température en °C (None si erreur)
+            hum: Humidité en % (None si erreur)
+            window: État fenêtre True=ouverte (None si erreur)
+        """
         with self._lock:
             if temp is not None and hum is not None:
                 self._temperature = round(temp, 1)
@@ -146,7 +199,12 @@ class SensorReader:
                     logger.warning(f"⚠️ {self._error_count} échecs de lecture consécutifs - vérifiez les capteurs")
     
     def _run_loop(self):
-        """Boucle de lecture (thread)"""
+        """
+        Boucle principale du thread de lecture
+        
+        Lit les capteurs en continu à intervalle régulier.
+        Tourne en tâche de fond (daemon thread).
+        """
         logger.info(f"Démarrage lecture capteurs (intervalle: {self.interval}s)")
         
         while self._running:
@@ -161,7 +219,12 @@ class SensorReader:
         logger.info("Boucle capteurs arrêtée")
     
     def start(self):
-        """Démarre la lecture en arrière-plan"""
+        """
+        Démarre le thread de lecture des capteurs
+        
+        Configure les GPIO puis lance la boucle de lecture.
+        Appeler une seule fois au démarrage de l'application.
+        """
         if self._running:
             logger.warning("Lecture capteurs déjà en cours")
             return
@@ -174,7 +237,11 @@ class SensorReader:
         logger.info("Lecture capteurs démarrée")
     
     def stop(self):
-        """Arrête la lecture"""
+        """
+        Arrête proprement le thread et nettoie les GPIO
+        
+        Appelé lors de l'arrêt de l'application.
+        """
         if not self._running:
             return
         
@@ -187,7 +254,12 @@ class SensorReader:
         self.cleanup()
     
     def cleanup(self):
-        """Nettoyage GPIO"""
+        """
+        Libère les ressources GPIO
+        
+        Appelé automatiquement par stop().
+        Important pour éviter les warnings "channel already in use".
+        """
         if not GPIO_AVAILABLE:
             return
         

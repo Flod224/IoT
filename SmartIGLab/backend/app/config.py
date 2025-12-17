@@ -1,51 +1,62 @@
 """
-Configuration centralisée pour le backend SmartIGLab
+SmartIGLab - Configuration Backend
+==================================
+Configuration centralisée avec Pydantic Settings.
+Valeurs par défaut overridables via fichier .env
 """
 
-import os
 from pathlib import Path
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    """Configuration de l'application"""
+    """
+    Configuration principale du backend SmartIGLab
     
-    # Serveur
-    host: str = "0.0.0.0"
-    port: int = 8000
-    debug: bool = False
+    Toutes les valeurs peuvent être overridées via:
+    - Fichier .env dans backend/app/.env
+    - Variables d'environnement système
+    """
     
-    # Capacité
-    room_capacity: int = 40
+    # === SERVEUR ===
+    host: str = "0.0.0.0"  # Écoute sur toutes les interfaces réseau
+    port: int = 8000  # Port HTTP par défaut
+    debug: bool = False  # Mode debug (logs verbeux)
     
-    # GPIO (Raspberry Pi, BCM numbering)
-    dht22_pin: int = 4
-    reed_switch_pin: int = 17
-    sensor_read_interval: float = 10.0
+    # === SALLE ===
+    room_capacity: int = 40  # Capacité maximale de la salle
     
-    # Vision YOLO
-    vision_enabled: bool = True
-    cam_index: int = 0
-    cam_width: int = 640
-    cam_height: int = 480
-    yolo_model: str = "yolov8n.pt"
-    yolo_conf: float = 0.5
-    yolo_imgsz: int = 640
-    update_interval: float = 0.5
+    # === GPIO RASPBERRY PI ===
+    # Numérotation BCM (pas physique)
+    dht22_pin: int = 4  # Pin GPIO4 pour capteur température/humidité
+    reed_switch_pin: int = 17  # Pin GPIO17 pour détecteur fenêtre
+    sensor_read_interval: float = 10.0  # Lecture capteurs toutes les 10s
     
-    # Hyperplanning
-    hyperplanning_enabled: bool = False
-    hyperplanning_url: str = ""
-    hyperplanning_room_id: str = ""
-    hyperplanning_refresh_interval: float = 300.0
+    # === VISION YOLO (Comptage de personnes) ===
+    vision_enabled: bool = True  # Activer/désactiver la caméra
+    cam_index: int = 0  # Index caméra USB (/dev/video0)
+    cam_width: int = 640  # Résolution largeur
+    cam_height: int = 480  # Résolution hauteur
+    yolo_model: str = "yolov8n.pt"  # Modèle YOLO (nano pour Raspberry Pi)
+    yolo_conf: float = 0.5  # Seuil de confiance détection (0-1)
+    yolo_imgsz: int = 640  # Taille image YOLO
+    update_interval: float = 0.5  # Rafraîchissement vision (0.5s = 2 FPS)
     
-    # CORS
-    cors_origins: str = "*"
+    # === HYPERPLANNING (Emploi du temps) ===
+    hyperplanning_enabled: bool = True  # Activer le module planning
+    hyperplanning_url: str = ""  # URL iCal (prioritaire si renseignée)
+    hyperplanning_room_id: str = ""  # ID salle (non utilisé pour l'instant)
+    hyperplanning_refresh_interval: float = 60.0  # Mise à jour toutes les 1min
+    
+    # === SÉCURITÉ ===
+    api_key: str = "smartiglab_2024_secure_key_change_me"  # Clé API ESP32
+    cors_origins: str = "*"  # Origins CORS autorisées (GET uniquement)
     
     class Config:
-        env_file = ".env"
-        case_sensitive = False
+        """Configuration Pydantic"""
+        env_file = Path(__file__).parent / ".env"  # Fichier .env dans app/
+        case_sensitive = False  # Variables en minuscules ou majuscules
 
 
-# Instance globale
+# Instance globale unique utilisée par toute l'application
 settings = Settings()

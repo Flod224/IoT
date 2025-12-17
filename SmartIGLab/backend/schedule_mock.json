@@ -1,0 +1,34 @@
+{
+  "schedule": [
+    {
+      "start": "08:00",
+      "end": "10:00",
+      "title": "Programmation Avancée",
+      "professor": "Prof. Mahmoudi"
+    },
+    {
+      "start": "10:15",
+      "end": "12:15",
+      "title": "TP Réseaux et Sécurité",
+      "professor": "Prof. Mahmoudi"
+    },
+    {
+      "start": "13:30",
+      "end": "15:30",
+      "title": "IoT et Systèmes Embarqués",
+      "professor": "Prof.   Dupont"
+    },
+    {
+      "start": "15:45",
+      "end": "18:50",
+      "title": "Intelligence Artificielle ",
+      "professor": "Prof. Mahmoudi"
+    },
+    {
+      "start": "19:15",
+      "end": "20:05",
+      "title": "Projet Intégré MA2",
+      "professor": "Prof. Mahmoudi"
+    }
+  ]
+}
