@@ -52,6 +52,10 @@ class Settings(BaseSettings):
     api_key: str = "smartiglab_2024_secure_key_change_me"  # Clé API ESP32
     cors_origins: str = "*"  # Origins CORS autorisées (GET uniquement)
     
+    # Authentification dashboard web (Basic Auth)
+    dashboard_username: str = "admin"  # Nom d'utilisateur dashboard
+    dashboard_password: str = "smartiglab2024"  # Mot de passe dashboard (changez-le!)
+    
     class Config:
         """Configuration Pydantic"""
         env_file = Path(__file__).parent / ".env"  # Fichier .env dans app/

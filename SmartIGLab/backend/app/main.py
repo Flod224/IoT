@@ -25,14 +25,18 @@ import logging
 from pathlib import Path
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request, HTTPException
+from fastapi import FastAPI, Request, HTTPException, Depends, Cookie
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse, FileResponse, RedirectResponse
 from collections import defaultdict
 import threading
+import secrets
+import hashlib
+from datetime import datetime, timedelta
+from typing import Optional
 
 from app.config import settings
-from app.models import SystemStatus, HealthResponse, EnvironmentData, HyperplanningData
+from app.models import SystemStatus, HealthResponse, EnvironmentData, HyperplanningData, LoginRequest
 from app.sensors import SensorReader
 from app.hyperplanning import HyperplanningClient
 from app.people_counter import PeopleCounter, Config as VisionConfig
@@ -52,10 +56,58 @@ sensor_reader = None  # Lecteur capteurs GPIO
 hyperplanning_client = None  # Client emploi du temps
 app_start_time = time.time()  # Timestamp démarrage pour uptime
 
+# === Gestion Sessions (dictionnaire en mémoire) ===
+# En production: utiliser Redis ou base de données
+active_sessions = {}  # {session_token: {username, expires_at}}
+sessions_lock = threading.Lock()
+SESSION_DURATION = timedelta(hours=24)  # Durée validité session
+
 # === Rate Limiting (Sécurité anti-DoS) ===
 request_counts = defaultdict(list)  # {ip: [timestamp1, timestamp2, ...]}
 rate_limit_lock = threading.Lock()  # Thread-safe
 MAX_REQUESTS_PER_MINUTE = 60  # 1 requête/seconde maximum par IP
+
+
+def create_session_token(username: str) -> str:
+    """Génère un token de session sécurisé"""
+    random_data = secrets.token_bytes(32)
+    timestamp = str(datetime.now().timestamp()).encode()
+    combined = username.encode() + random_data + timestamp
+    return hashlib.sha256(combined).hexdigest()
+
+
+def verify_session(session_token: Optional[str] = Cookie(None)):
+    """
+    Vérifie la validité de la session via cookie
+    
+    Retourne username si valide, sinon lève 401 avec redirection login.
+    """
+    if not session_token:
+        raise HTTPException(status_code=401, detail="Non authentifié")
+    
+    with sessions_lock:
+        session = active_sessions.get(session_token)
+        
+        if not session:
+            raise HTTPException(status_code=401, detail="Session invalide")
+        
+        # Vérifier expiration
+        if datetime.now() > session['expires_at']:
+            del active_sessions[session_token]
+            raise HTTPException(status_code=401, detail="Session expirée")
+        
+        return session['username']
+
+
+def cleanup_expired_sessions():
+    """Nettoie les sessions expirées (appelé périodiquement)"""
+    with sessions_lock:
+        now = datetime.now()
+        expired = [token for token, data in active_sessions.items() if now > data['expires_at']]
+        for token in expired:
+            del active_sessions[token]
+        if expired:
+            logger.info(f"Nettoyage: {len(expired)} session(s) expirée(s)")
 
 
 @asynccontextmanager
@@ -208,33 +260,125 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
     allow_credentials=True,
-    allow_methods=["GET"],  # Seulement GET (lecture seule)
+    allow_methods=["GET", "POST"],  # GET + POST pour login/logout
     allow_headers=["*"],
 )
 
 
-@app.get("/", include_in_schema=False)
-async def root():
+@app.get("/login", response_class=HTMLResponse, include_in_schema=False)
+async def login_page():
     """
-    Page d'accueil de l'API
+    Page de connexion
+    """
+    html_path = Path(__file__).parent.parent.parent / "frontend" / "login.html"
     
-    Retourne infos basiques sans authentification.
+    if not html_path.exists():
+        raise HTTPException(status_code=404, detail="Page de login non trouvée")
+    
+    with open(html_path, "r", encoding="utf-8") as f:
+        return HTMLResponse(content=f.read())
+
+
+@app.post("/login", include_in_schema=False)
+async def login(credentials: LoginRequest):
     """
-    return {
-        "name": "SmartIGLab API",
-        "version": "1.0.0",
-        "status": "running"
-    }
+    Authentification utilisateur
+    
+    Vérifie credentials et crée session si valide.
+    Retourne cookie de session.
+    """
+    # Vérifier credentials
+    correct_username = secrets.compare_digest(credentials.username, settings.dashboard_username)
+    correct_password = secrets.compare_digest(credentials.password, settings.dashboard_password)
+    
+    if not (correct_username and correct_password):
+        return JSONResponse(
+            status_code=401,
+            content={"success": False, "detail": "Identifiants invalides"}
+        )
+    
+    # Créer session
+    session_token = create_session_token(credentials.username)
+    expires_at = datetime.now() + SESSION_DURATION
+    
+    with sessions_lock:
+        active_sessions[session_token] = {
+            'username': credentials.username,
+            'expires_at': expires_at,
+            'created_at': datetime.now()
+        }
+    
+    logger.info(f"Nouvelle session pour {credentials.username}")
+    
+    # Retourner réponse avec cookie
+    response = JSONResponse(content={"success": True})
+    response.set_cookie(
+        key="session_token",
+        value=session_token,
+        httponly=True,  # Protection XSS
+        secure=False,  # True en production avec HTTPS
+        samesite="lax",  # Protection CSRF
+        max_age=int(SESSION_DURATION.total_seconds())
+    )
+    
+    return response
+
+
+@app.post("/logout", include_in_schema=False)
+async def logout(session_token: Optional[str] = Cookie(None)):
+    """
+    Déconnexion utilisateur
+    
+    Supprime la session et le cookie.
+    """
+    if session_token:
+        with sessions_lock:
+            if session_token in active_sessions:
+                username = active_sessions[session_token]['username']
+                del active_sessions[session_token]
+                logger.info(f"Déconnexion: {username}")
+    
+    # Supprimer cookie
+    response = JSONResponse(content={"success": True})
+    response.delete_cookie(key="session_token")
+    
+    return response
+
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+async def dashboard(session_token: Optional[str] = Cookie(None)):
+    """
+    Dashboard web principal
+    
+    Sécurité: Session cookie
+    Redirige vers /login si non authentifié
+    """
+    # Vérifier session
+    try:
+        username = verify_session(session_token)
+        cleanup_expired_sessions()  # Nettoyage périodique
+    except HTTPException:
+        # Non authentifié -> redirection login
+        return RedirectResponse(url="/login", status_code=302)
+    
+    # Servir dashboard
+    html_path = Path(__file__).parent.parent.parent / "frontend" / "index.html"
+    
+    if not html_path.exists():
+        raise HTTPException(status_code=404, detail="Dashboard non trouvé")
+    
+    with open(html_path, "r", encoding="utf-8") as f:
+        return HTMLResponse(content=f.read())
 
 
 @app.get("/status", response_model=SystemStatus)
-async def get_status(api_key: str = None):
+async def get_status(session_token: Optional[str] = Cookie(None)):
     """
     Endpoint principal: état complet du système
     
     Sécurité:
-      - Authentification par clé API (query param)
-      - HTTP 403 si clé invalide ou absente
+      - Authentification par session cookie
+      - HTTP 401 si session invalide
     
     Données retournées:
       - people_count: Nombre de personnes détectées (YOLO)
@@ -247,9 +391,8 @@ async def get_status(api_key: str = None):
       OCCUPÉE = hyperplanning.state in ["course_en_cours", "course_prevue"]
       (Le nombre de personnes n'affecte PAS le statut)
     """
-    # Vérification clé API
-    if api_key != settings.api_key:
-        raise HTTPException(status_code=403, detail="Invalid API key")
+    # Vérifier session
+    verify_session(session_token)
     
     # Données vision
     people_count = 0
@@ -306,33 +449,6 @@ async def get_status(api_key: str = None):
         hyperplanning=hp_data,
         vision_fps=fps,
         updated_at=time.time()
-    )
-
-
-@app.get("/healthz", response_model=HealthResponse)
-async def healthcheck():
-    """
-    Endpoint de health check (monitoring)
-    
-    Accessible sans authentification.
-    Utile pour supervision externe (Nagios, Prometheus, etc.).
-    
-    Returns:
-      - status: "healthy" si au moins un service tourne
-      - vision_running: Système vision actif
-      - sensors_running: Capteurs GPIO actifs
-      - uptime: Secondes depuis démarrage
-    """
-    vision_ok = vision_counter is not None and vision_counter._running if vision_counter else False
-    sensors_ok = sensor_reader is not None and sensor_reader._running if sensor_reader else False
-    
-    uptime = time.time() - app_start_time
-    
-    return HealthResponse(
-        status="healthy" if (vision_ok or sensors_ok) else "degraded",
-        vision_running=vision_ok,
-        sensors_running=sensors_ok,
-        uptime=uptime
     )
 
 

@@ -46,6 +46,14 @@ class SystemStatus(BaseModel):
     updated_at: float = Field(..., description="Timestamp de la réponse")
 
 
+class LoginRequest(BaseModel):
+    """
+    Données de connexion utilisateur
+    """
+    username: str = Field(..., description="Nom d'utilisateur")
+    password: str = Field(..., description="Mot de passe")
+
+
 class HealthResponse(BaseModel):
     """
     Réponse du endpoint /healthz
