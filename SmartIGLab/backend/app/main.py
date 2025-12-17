@@ -316,7 +316,7 @@ async def login(credentials: LoginRequest):
         key="session_token",
         value=session_token,
         httponly=True,  # Protection XSS
-        secure=False,  # True en production avec HTTPS
+        secure=True,  # Cookie uniquement sur HTTPS
         samesite="lax",  # Protection CSRF
         max_age=int(SESSION_DURATION.total_seconds())
     )

@@ -22,3 +22,6 @@ SmartIGLab/vision/*.pt
 
 # === LOGS ===
 *.log
+
+# === SCRIPT ===
+SmartIGLab/backend/generate_ssl_cert.sh
