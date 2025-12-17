@@ -257,8 +257,8 @@ h1{
 <header>
 <h1>🎓 SmartIGLab</h1>
 <div class='subtitle'>Auditoire Intelligent</div>
-<div class='current-time' id='currentTime'>⏰ --:--</div>
-<div id='status' class='loading'>⏳ Connexion en cours...</div>
+<div class='current-time' id='currentTime'> --:--</div>
+<div id='status' class='loading'> Connexion en cours...</div>
 </header>
 <div id='content' class='loading-text'>Chargement des données...</div>
 </div>
@@ -285,7 +285,7 @@ function updateClock(){
 const now=new Date();
 const h=String(now.getHours()).padStart(2,'0');
 const m=String(now.getMinutes()).padStart(2,'0');
-document.getElementById('currentTime').textContent=`⏰ ${h}:${m}`;
+document.getElementById('currentTime').textContent=` ${h}:${m}`;
 }
 function updateData(){
 fetch('/status')
@@ -329,8 +329,8 @@ if(mode==='course'){
 html=`<div class="course-hero">
 <div class="course-icon">📚</div>
 <div class="course-title" id="courseTitle">${data.hyperplanning.title||'Cours en cours'}</div>
-<div class="course-time" id="courseTime">⏰ ${data.hyperplanning.start_time} - ${data.hyperplanning.end_time}</div>`;
-if(data.hyperplanning.professor)html+=`<div class="course-professor" id="courseProf">👨‍🏫 ${data.hyperplanning.professor}</div>`;
+<div class="course-time" id="courseTime"> ${data.hyperplanning.start_time} - ${data.hyperplanning.end_time}</div>`;
+if(data.hyperplanning.professor)html+=`<div class="course-professor" id="courseProf"> ${data.hyperplanning.professor}</div>`;
 html+=`<div class="course-status">🔴 SALLE OCCUPÉE</div>
 </div><div class="grid" style="margin-top:30px">`;
 if(data.environment&&data.environment.temperature!==null){
@@ -387,7 +387,7 @@ if(currentMode==='course'){
 const title=document.getElementById('courseTitle');
 if(title&&data.hyperplanning.title)title.textContent=data.hyperplanning.title;
 const time=document.getElementById('courseTime');
-if(time)time.textContent=`⏰ ${data.hyperplanning.start_time} - ${data.hyperplanning.end_time}`;
+if(time)time.textContent=` ${data.hyperplanning.start_time} - ${data.hyperplanning.end_time}`;
 }else{
 const people=document.getElementById('peopleValue');
 if(people&&data.people_count!==undefined)people.innerHTML=`${data.people_count}<span class="unit">/ ${data.capacity}</span>`;
