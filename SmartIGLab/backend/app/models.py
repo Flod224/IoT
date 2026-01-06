@@ -29,6 +29,8 @@ class HyperplanningData(BaseModel):
     start_time: Optional[str] = Field(None, description="Heure de début (HH:MM)")
     end_time: Optional[str] = Field(None, description="Heure de fin (HH:MM)")
     professor: Optional[str] = Field(None, description="Nom du professeur")
+    formation: Optional[str] = Field(None, description="Formations concernées")
+    type: Optional[str] = Field(None, description="Type de cours (Cours, TP, Projet, etc.)")
 
 
 class SystemStatus(BaseModel):

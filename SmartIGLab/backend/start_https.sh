@@ -1,7 +1,25 @@
 #!/bin/bash
 # Script de démarrage SmartIGLab avec HTTPS
 
-echo "🚀 Démarrage SmartIGLab Backend (HTTPS)..."
+echo " Démarrage SmartIGLab Backend (HTTPS)..."
+echo ""
+echo "Source Hyperplanning:"
+echo "  1) JSON (schedule_mock.json) - Démo"
+echo "  2) ICS (Edt_Ho_IGLab.ics) - Calendrier réel"
+echo ""
+read -p "Choix [1-2]: " choice
+
+case $choice in
+  2)
+    echo " Mode ICS"
+    export HYPERPLANNING_USE_ICS=True
+    ;;
+  *)
+    echo " Mode JSON"
+    export HYPERPLANNING_USE_ICS=False
+    ;;
+esac
+
 echo ""
 
 # Vérifier certificats SSL

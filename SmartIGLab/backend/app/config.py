@@ -44,17 +44,14 @@ class Settings(BaseSettings):
     
     # === HYPERPLANNING (Emploi du temps) ===
     hyperplanning_enabled: bool = True  # Activer le module planning
-    hyperplanning_url: str = ""  # URL iCal (prioritaire si renseignée)
-    hyperplanning_room_id: str = ""  # ID salle (non utilisé pour l'instant)
+    hyperplanning_use_ics: bool = False  # False=JSON, True=ICS
     hyperplanning_refresh_interval: float = 60.0  # Mise à jour toutes les 1min
     
-    # === SÉCURITÉ ===
-    api_key: str = "smartiglab_2024_secure_key_change_me"  # Clé API ESP32
     cors_origins: str = "*"  # Origins CORS autorisées (GET uniquement)
     
-    # Authentification dashboard web (Basic Auth)
-    dashboard_username: str = "admin"  # Nom d'utilisateur dashboard
-    dashboard_password: str = "smartiglab2024"  # Mot de passe dashboard (changez-le!)
+    # === AUTHENTIFICATION (DÉFINIR DANS .env) ===
+    dashboard_username: str = "admin"  # Par défaut, CHANGER dans .env!
+    dashboard_password: str = "changeme"  # Par défaut, CHANGER dans .env!
     
     class Config:
         """Configuration Pydantic"""

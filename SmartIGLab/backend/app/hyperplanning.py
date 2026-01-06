@@ -1,12 +1,12 @@
 """
 SmartIGLab - Client Hyperplanning
 ==================================
-Récupération automatique de l'emploi du temps avec système de fallback:
-  1. iCal depuis URL (prioritaire)
-  2. Fichier schedule.ical local
-  3. Fichier schedule_mock.json (fallback statique)
-
+Récupération automatique de l'emploi du temps.
 Thread-safe avec rafraîchissement automatique.
+
+Sources:
+  - ICS: Edt_Ho_IGLab.ics (calendrier réel)
+  - JSON: schedule_mock.json (mode démo)
 """
 
 import time
@@ -19,45 +19,48 @@ logger = logging.getLogger(__name__)
 
 class HyperplanningClient:
     """
-    Client d'emploi du temps avec système triple-fallback
+    Client d'emploi du temps SmartIGLab
     
     Fonctionne en thread séparé pour ne pas bloquer l'API.
     L'état est partagé de manière thread-safe avec des locks.
+    
+    Sources:
+      - ICS: Edt_Ho_IGLab.ics (calendrier réel)
+      - JSON: schedule_mock.json (mode démo)
     """
     
-    def __init__(self, url: str, room_id: str, refresh_interval: float = 300.0):
+    def __init__(self, use_ics: bool = False, refresh_interval: float = 60.0):
         """
         Initialise le client Hyperplanning
         
         Args:
-            url: URL iCal (si vide, utilise fichier ou JSON)
-            room_id: ID de la salle (non utilisé actuellement)
-            refresh_interval: Intervalle de rafraîchissement en secondes (défaut: 5min)
+            use_ics: False=JSON, True=ICS
+            refresh_interval: Intervalle de rafraîchissement en secondes (défaut: 60s)
         """
-        self.url = url
-        self.room_id = room_id
+      
+        self.use_ics = use_ics
         self.refresh_interval = refresh_interval
         
         # État partagé entre threads (protégé par lock)
         self._lock = Lock()
-        self._state = "unknown"  # États: "libre", "course_en_cours", "course_prevue", "unknown"
-        self._title: Optional[str] = None  # Nom du cours
-        self._start_time: Optional[str] = None  # Heure début (HH:MM)
-        self._end_time: Optional[str] = None  # Heure fin (HH:MM)
-        self._professor: Optional[str] = None  # Nom professeur
-        self._last_update: Optional[float] = None  # Timestamp dernière maj
-        self._running = False  # État du thread
+        self._state = "unknown"
+        self._title: Optional[str] = None
+        self._start_time: Optional[str] = None
+        self._end_time: Optional[str] = None
+        self._professor: Optional[str] = None
+        self._formation: Optional[str] = None
+        self._type: Optional[str] = None
+        self._last_update: Optional[float] = None
+        self._running = False
         
         self._thread: Optional[Thread] = None
     
     def get_status(self) -> dict:
         """
-        Retourne l'état actuel de l'emploi du temps
-        
-        Thread-safe: utilise un lock pour garantir la cohérence.
+        Retourne l'état actuel de l'emploi du temps (thread-safe)
         
         Returns:
-            dict avec state, title, start_time, end_time, professor, last_update
+            dict avec state, title, start_time, end_time, professor, formation, type, last_update
         """
         with self._lock:
             return {
@@ -66,87 +69,69 @@ class HyperplanningClient:
                 "start_time": self._start_time,
                 "end_time": self._end_time,
                 "professor": self._professor,
+                "formation": self._formation,
+                "type": self._type,
                 "last_update": self._last_update
             }
     
     def _fetch_planning(self):
         """
-        Récupère l'emploi du temps avec système de fallback
+        Récupère l'emploi du temps selon le mode configuré
         
-        Priorités:
-          1. URL iCal (si configurée)
-          2. Fichier schedule.ical (backend/)
-          3. Fichier schedule_mock.json (backend/)
+        Mode ICS: Lit UNIQUEMENT Edt_Ho_IGLab.ics
+        Mode JSON: Lit UNIQUEMENT schedule_mock.json
         
         Returns:
-            dict avec état du cours actuel
+            dict avec état du cours actuel ou libre si aucune donnée
         """
         import datetime
         from pathlib import Path
         
-        # Heure actuelle
         now = datetime.datetime.now()
         current_time = now.strftime("%H:%M")
         
-        # 1. Essayer iCal depuis URL
-        if self.url:
-            try:
-                schedule = self._parse_ical_from_url(self.url, now)
-                if schedule:
-                    return self._find_current_course(schedule, current_time)
-            except Exception as e:
-                logger.warning(f"Erreur lecture iCal URL: {e}, fallback vers fichier")
-        
-        # 2. Essayer fichier .ical local
-        ical_file = Path(__file__).parent.parent / "schedule.ical"
-        if ical_file.exists():
+        if self.use_ics:
+            # Mode ICS uniquement
+            ical_file = Path(__file__).parent.parent / "Edt_Ho_IGLab.ics"
+            if not ical_file.exists():
+                logger.error("Fichier ICS introuvable: Edt_Ho_IGLab.ics")
+                return self._empty_state()
+            
             try:
                 schedule = self._parse_ical_from_file(ical_file, now)
-                if schedule:
-                    return self._find_current_course(schedule, current_time)
+                if schedule is None or len(schedule) == 0:
+                    logger.info("Aucun cours aujourd'hui (ICS)")
+                    return self._empty_state()
+                return self._find_current_course(schedule, current_time)
             except Exception as e:
-                logger.warning(f"Erreur lecture fichier iCal: {e}, fallback vers JSON")
-        
-        # 3. Fallback: JSON statique
-        return self._fetch_from_json(current_time)
+                logger.error(f"Erreur lecture ICS: {e}")
+                return self._empty_state()
+        else:
+            # Mode JSON uniquement
+            return self._fetch_from_json(current_time)
     
-    def _parse_ical_from_url(self, url: str, date):
-        """
-        Parse un calendrier iCal depuis une URL
-        
-        Args:
-            url: URL du fichier .ics
-            date: Date pour filtrer les événements du jour
-        
-        Returns:
-            Liste d'événements triés par heure de début
-        """
-        try:
-            from icalendar import Calendar
-            import requests
-            
-            response = requests.get(url, timeout=10)
-            response.raise_for_status()
-            
-            cal = Calendar.from_ical(response.content)
-            return self._extract_events_for_today(cal, date)
-        except ImportError:
-            logger.error("Module 'icalendar' non installé. Installez-le: pip install icalendar")
-            return None
-        except Exception as e:
-            logger.error(f"Erreur parsing iCal URL: {e}")
-            return None
+    def _empty_state(self):
+        """Retourne un état libre sans données"""
+        return {
+            "state": "libre",
+            "title": None,
+            "start_time": None,
+            "end_time": None,
+            "professor": None,
+            "formation": None,
+            "type": None
+        }
     
     def _parse_ical_from_file(self, filepath, date):
         """
         Parse un calendrier iCal depuis un fichier local
         
         Args:
-            filepath: Chemin vers le fichier .ical
+            filepath: Chemin vers le fichier .ics
             date: Date pour filtrer les événements du jour
         
         Returns:
-            Liste d'événements triés par heure de début
+            Liste d'événements triés par heure de début ou None si erreur
         """
         try:
             from icalendar import Calendar
@@ -171,8 +156,9 @@ class HyperplanningClient:
             date: Date pour filtrer (datetime)
         
         Returns:
-            Liste d'événements avec title, start, end, professor
+            Liste d'événements avec title, start, end, professor, formation, type
         """
+        import re
         events = []
         today = date.date()
         
@@ -184,7 +170,6 @@ class HyperplanningClient:
                 if not dtstart or not dtend:
                     continue
                 
-                # Convertir en datetime si nécessaire
                 start = dtstart.dt
                 end = dtend.dt
                 
@@ -194,11 +179,39 @@ class HyperplanningClient:
                 
                 # Vérifier si l'événement est aujourd'hui
                 if start.date() == today:
+                    description = str(component.get('description', ''))
+                    
+                    # Extraire le nom du cours
+                    title = 'Sans titre'
+                    title_match = re.search(r'(?:Aa|aa|AA)\s*:\s*([^\n]+)', description)
+                    if title_match:
+                        title = title_match.group(1).strip()
+                    
+                    # Extraire l'enseignant
+                    professor = ''
+                    prof_match = re.search(r'(?:Enseignants?|Teachers?|Professors?)\s*:\s*([^\n]+)', description, re.IGNORECASE)
+                    if prof_match:
+                        professor = prof_match.group(1).strip()
+                    
+                    # Extraire les formations
+                    formation = ''
+                    form_match = re.search(r'(?:Formations?|Groups?)\s*:\s*([^\n]+)', description, re.IGNORECASE)
+                    if form_match:
+                        formation = form_match.group(1).strip()
+                    
+                    # Extraire le type
+                    course_type = ''
+                    type_match = re.search(r'(?:Type|Kind)\s*:\s*([^\n]+)', description, re.IGNORECASE)
+                    if type_match:
+                        course_type = type_match.group(1).strip()
+                    
                     events.append({
-                        "title": str(component.get('summary', 'Sans titre')),
+                        "title": title,
                         "start": start.strftime("%H:%M"),
                         "end": end.strftime("%H:%M"),
-                        "professor": str(component.get('description', '')) or str(component.get('location', ''))
+                        "professor": professor,
+                        "formation": formation,
+                        "type": course_type
                     })
         
         return sorted(events, key=lambda x: x["start"])
@@ -207,17 +220,13 @@ class HyperplanningClient:
         """
         Trouve le cours actif dans le planning
         
-        Utilise une comparaison en minutes depuis minuit pour éviter
-        les erreurs de comparaison de strings ("18:54" vs "18:50").
-        
         Args:
-            schedule: Liste de cours avec start, end, title, professor
+            schedule: Liste de cours avec start, end, title, professor, formation, type
             current_time: Heure actuelle au format "HH:MM"
         
         Returns:
             dict avec state="course_en_cours" ou "libre"
         """
-        # Convertir l'heure actuelle en minutes pour comparaison correcte
         current_minutes = self._time_to_minutes(current_time)
         
         for course in schedule:
@@ -230,24 +239,17 @@ class HyperplanningClient:
                     "title": course["title"],
                     "start_time": course["start"],
                     "end_time": course["end"],
-                    "professor": course.get("professor", "")
+                    "professor": course.get("professor", ""),
+                    "formation": course.get("formation", ""),
+                    "type": course.get("type", "")
                 }
         
         # Aucun cours maintenant
-        return {
-            "state": "libre",
-            "title": None,
-            "start_time": None,
-            "end_time": None,
-            "professor": None
-        }
+        return self._empty_state()
     
     def _time_to_minutes(self, time_str):
         """
         Convertit HH:MM en minutes depuis minuit
-        
-        Permet une comparaison numérique correcte des heures.
-        Exemple: "18:54" -> 1134, "18:50" -> 1130
         
         Args:
             time_str: Heure au format "HH:MM"
@@ -263,10 +265,7 @@ class HyperplanningClient:
     
     def _fetch_from_json(self, current_time):
         """
-        Fallback final: lecture depuis JSON statique
-        
-        Lit schedule_mock.json pour avoir un emploi du temps
-        même si iCal n'est pas disponible.
+        Lecture depuis JSON statique (mode démo)
         
         Args:
             current_time: Heure actuelle "HH:MM"
@@ -280,42 +279,31 @@ class HyperplanningClient:
         schedule_file = Path(__file__).parent.parent / "schedule_mock.json"
         
         if not schedule_file.exists():
-            logger.warning("schedule_mock.json introuvable, retour état libre")
-            return {
-                "state": "libre",
-                "title": None,
-                "start_time": None,
-                "end_time": None,
-                "professor": None
-            }
+            logger.error("schedule_mock.json introuvable")
+            return self._empty_state()
         
         try:
             with open(schedule_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            # Convertir temps pour comparaison correcte
             schedule = [{"title": c["title"], "start": c["start"], "end": c["end"], 
-                        "professor": c.get("professor", "")} 
+                        "professor": c.get("professor", ""),
+                        "formation": c.get("formation", ""),
+                        "type": c.get("type", "")} 
                        for c in data.get("schedule", [])]
             
             return self._find_current_course(schedule, current_time)
             
         except Exception as e:
             logger.error(f"Erreur lecture JSON: {e}")
-            return {
-                "state": "unknown",
-                "title": None,
-                "start_time": None,
-                "end_time": None,
-                "professor": None
-            }
+            return self._empty_state()
     
     def _update_state(self, data: dict):
         """
         Met à jour l'état interne de manière thread-safe
         
         Args:
-            data: dict avec state, title, start_time, end_time, professor
+            data: dict avec state, title, start_time, end_time, professor, formation, type
         """
         with self._lock:
             self._state = data.get("state", "unknown")
@@ -323,14 +311,13 @@ class HyperplanningClient:
             self._start_time = data.get("start_time")
             self._end_time = data.get("end_time")
             self._professor = data.get("professor")
+            self._formation = data.get("formation")
+            self._type = data.get("type")
             self._last_update = time.time()
     
     def _run_loop(self):
         """
         Boucle principale du thread de rafraîchissement
-        
-        Récupère l'emploi du temps à intervalle régulier.
-        Tourne en tâche de fond (daemon thread).
         """
         logger.info(f"Démarrage Hyperplanning client (intervalle: {self.refresh_interval}s)")
         
@@ -349,16 +336,13 @@ class HyperplanningClient:
     def start(self):
         """
         Démarre le thread de rafraîchissement
-        
-        Lance une boucle en arrière-plan qui récupère l'emploi
-        du temps à intervalles réguliers.
         """
         if self._running:
             logger.warning("Client Hyperplanning déjà en cours")
             return
         
-        if not self.url:
-            logger.warning("URL Hyperplanning non configurée - mode mock")
+        mode = "ICS" if self.use_ics else "JSON"
+        logger.info(f"Hyperplanning mode: {mode}")
         
         self._running = True
         self._thread = Thread(target=self._run_loop, daemon=True)
@@ -368,8 +352,6 @@ class HyperplanningClient:
     def stop(self):
         """
         Arrête proprement le thread de rafraîchissement
-        
-        Appelé lors de l'arrêt de l'application.
         """
         if not self._running:
             return

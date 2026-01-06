@@ -183,12 +183,12 @@ async def lifespan(app: FastAPI):
     if settings.hyperplanning_enabled:
         try:
             hyperplanning_client = HyperplanningClient(
-                url=settings.hyperplanning_url,
-                room_id=settings.hyperplanning_room_id,
+                use_ics=settings.hyperplanning_use_ics,
                 refresh_interval=settings.hyperplanning_refresh_interval
             )
             hyperplanning_client.start()
-            logger.info("✓ Client Hyperplanning démarré")
+            source = "ICS" if settings.hyperplanning_use_ics else "JSON"
+            logger.info(f"✓ Client Hyperplanning démarré ({source})")
         except Exception as e:
             logger.error(f"✗ Erreur démarrage Hyperplanning: {e}", exc_info=True)
             hyperplanning_client = None
@@ -426,7 +426,9 @@ async def get_status(session_token: Optional[str] = Cookie(None)):
             title=hp_status["title"],
             start_time=hp_status["start_time"],
             end_time=hp_status["end_time"],
-            professor=hp_status["professor"]
+            professor=hp_status["professor"],
+            formation=hp_status.get("formation"),
+            type=hp_status.get("type")
         )
     
     # Calcul occupation

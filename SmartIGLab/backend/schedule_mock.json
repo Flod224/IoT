@@ -4,31 +4,41 @@
       "start": "08:00",
       "end": "10:00",
       "title": "Programmation Avancée",
-      "professor": "Prof. Mahmoudi"
+      "professor": "Prof. Mahmoudi",
+      "formation": "MAB1 - Ir. civil informatique et gestion",
+      "type": "Cours"
     },
     {
       "start": "10:15",
       "end": "12:15",
       "title": "TP Réseaux et Sécurité",
-      "professor": "Prof. Mahmoudi"
+      "professor": "Prof. Mahmoudi",
+      "formation": "MAB1 - Ir. civil informatique et gestion",
+      "type": "TP"
     },
     {
       "start": "13:30",
       "end": "15:30",
       "title": "IoT et Systèmes Embarqués",
-      "professor": "Prof.   Dupont"
+      "professor": "Prof. Dupont",
+      "formation": "MAB2 - Ir. civil",
+      "type": "Projet"
     },
     {
       "start": "15:45",
-      "end": "18:50",
-      "title": "Intelligence Artificielle ",
-      "professor": "Prof. Mahmoudi"
+      "end": "16:10",
+      "title": "Intelligence Artificielle",
+      "professor": "Prof. Mahmoudi",
+      "formation": "MAB1 - Ir. civil informatique et gestion",
+      "type": "Cours"
     },
     {
       "start": "19:15",
       "end": "20:05",
       "title": "Projet IoT MA2",
-      "professor": "Prof. Mahmoudi"
+      "professor": "Prof. Mahmoudi",
+      "formation": "MAB2 - Ir. civil",
+      "type": "Projet"
     }
   ]
 }
