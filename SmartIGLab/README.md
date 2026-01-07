@@ -1,6 +1,6 @@
 # SmartIGLab
 
-Système IoT d'auditoire intelligent avec backend Raspberry Pi, DHT22 et Caméra + YOLO.
+Système IoT d'auditoire intelligent avec backend Raspberry Pi, DHT22, USB Caméra, yolov8n, Node-RED.
 
 ## Démarrage
 
@@ -32,13 +32,16 @@ chmod +x start_https.sh
 Raspberry Pi (Backend)
   ├─ YOLO vision (caméra USB)
   ├─ Capteurs GPIO (DHT22)
-  ├─ Hyperplanning (iCal/JSON)
-  └─ API FastAPI :8000
+  ├─ Hyperplanning (ICS/JSON)
+  └─ API FastAPI :8000 (https)
+  └─ Node-RED
 ```
 
 ## Node-RED (Alertes email)
-
-Import du flow : `nodered/SmartIGLab email notif.json`
+Installer node-red voir doc: `https://nodered.org/docs/getting-started/raspberrypi `
+Installer `node-red-node-email>5.0.4`
+Import du flow : `nodered/SmartIGLab_email_notif.json` + Deploiement
+Injecter une seule fois le timestamp
 
 **Fonctionnalités :**
 - Lecture auto toutes les 30s via `/api/status`
