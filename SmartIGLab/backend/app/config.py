@@ -52,7 +52,7 @@ class Settings(BaseSettings):
     # === AUTHENTIFICATION (DÉFINIR DANS .env) ===
     dashboard_username: str = "admin"  # Par défaut, CHANGER dans .env!
     dashboard_password: str = "changeme"  # Par défaut, CHANGER dans .env!
-    api_key: str = "changeme_api_key"  # Clé API pour services internes (Node-RED)
+    api_key: str = "changeme_api_key"  # Clé API pour services internes (Node-RED) CHANGER dans .env!
     
     class Config:
         """Configuration Pydantic"""
