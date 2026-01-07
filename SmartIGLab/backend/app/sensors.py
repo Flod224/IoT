@@ -60,7 +60,7 @@ class SensorReader:
         self._lock = Lock()
         self._temperature: Optional[float] = None
         self._humidity: Optional[float] = None
-        self._window_open: Optional[bool] = None
+        self._window_open: Optional[bool] = False  # Défaut: fermée
         self._last_update: Optional[float] = None
         self._running = False
         self._error_count = 0
@@ -160,8 +160,10 @@ class SensorReader:
             temp = self._dht_device.temperature
             hum = self._dht_device.humidity
             
-            # Reed switch (HIGH = ouvert avec pull-up)
-            window = GPIO.input(self.reed_pin) == GPIO.HIGH
+            # Reed switch - DÉSACTIVÉ (toujours fermée)
+            # Décommenter si capteur branché:
+            # window = GPIO.input(self.reed_pin) == GPIO.HIGH
+            window = False  # Forcé à False si capteur non branché
             
             return temp, hum, window
             

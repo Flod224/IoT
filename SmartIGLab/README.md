@@ -36,6 +36,19 @@ Raspberry Pi (Backend)
   └─ API FastAPI :8000
 ```
 
+## Node-RED (Alertes email)
+
+Import du flow : `nodered/SmartIGLab email notif.json`
+
+**Fonctionnalités :**
+- Lecture auto toutes les 30s via `/api/status`
+- Alerte email si température > 50°C
+- Alerte email si fenêtre ouverte après 21h
+
+**Configuration :**
+- Nœud email : Gmail SMTP avec App Password
+- Header API : `X-API-Key: "Clé API à configurer éxactement la même dans .env et dans le noeud nodered API request"`
+
 ## Configuration écran tactile
 
 ### Désactiver la fonction tactile (via SSH)

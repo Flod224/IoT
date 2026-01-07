@@ -25,7 +25,7 @@ import logging
 from pathlib import Path
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request, HTTPException, Depends, Cookie
+from fastapi import FastAPI, Request, HTTPException, Depends, Cookie, Header
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, HTMLResponse, FileResponse, RedirectResponse
 from collections import defaultdict
@@ -97,6 +97,21 @@ def verify_session(session_token: Optional[str] = Cookie(None)):
             raise HTTPException(status_code=401, detail="Session expirée")
         
         return session['username']
+
+
+def verify_api_key(x_api_key: Optional[str] = Header(None)):
+    """
+    Vérifie la clé API pour les services internes (Node-RED)
+    
+    Header attendu: X-API-Key: <votre_clé>
+    """
+    if not x_api_key:
+        raise HTTPException(status_code=401, detail="API Key manquante")
+    
+    if not secrets.compare_digest(x_api_key, settings.api_key):
+        raise HTTPException(status_code=401, detail="API Key invalide")
+    
+    return True
 
 
 def cleanup_expired_sessions():
@@ -405,7 +420,7 @@ async def get_status(session_token: Optional[str] = Cookie(None)):
     env_data = EnvironmentData(
         temperature=None,
         humidity=None,
-        window_open=None,
+        window_open=False,  # Défaut: fermée
         last_update=None
     )
     if sensor_reader:
@@ -441,6 +456,70 @@ async def get_status(session_token: Optional[str] = Cookie(None)):
     if hp_data.state in ["course_en_cours", "course_prevue"]:
         occupied = True
     # Note: on ignore people_count pour la détermination d'occupation
+    
+    return SystemStatus(
+        occupied=occupied,
+        free_seats=free_seats,
+        people_count=people_count,
+        capacity=settings.room_capacity,
+        environment=env_data,
+        hyperplanning=hp_data,
+        vision_fps=fps,
+        updated_at=time.time()
+    )
+
+
+@app.get("/api/status", response_model=SystemStatus)
+async def get_status_api(api_key_valid: bool = Depends(verify_api_key)):
+    """
+    Endpoint API pour services internes (Node-RED, monitoring)
+    
+    Sécurité:
+      - Authentification par API Key (header X-API-Key)
+      - Pas de cookie nécessaire
+    
+    Usage:
+      curl -H "X-API-Key: votre_clé" https://localhost:8000/api/status
+    """
+    # Même logique que /status mais sans cookie
+    people_count = 0
+    fps = 0.0
+    if vision_counter:
+        people_count = vision_counter.people_count
+        fps = vision_counter.fps
+    
+    env_data = EnvironmentData(
+        temperature=None,
+        humidity=None,
+        window_open=False,  # Défaut: fermée
+        last_update=None
+    )
+    if sensor_reader:
+        sensor_data = sensor_reader.get_data()
+        env_data = EnvironmentData(
+            temperature=sensor_data["temperature"],
+            humidity=sensor_data["humidity"],
+            window_open=sensor_data["window_open"],
+            last_update=sensor_data["last_update"]
+        )
+    
+    hp_data = HyperplanningData(state="unknown")
+    if hyperplanning_client:
+        hp_status = hyperplanning_client.get_status()
+        hp_data = HyperplanningData(
+            state=hp_status["state"],
+            title=hp_status["title"],
+            start_time=hp_status["start_time"],
+            end_time=hp_status["end_time"],
+            professor=hp_status["professor"],
+            formation=hp_status.get("formation"),
+            type=hp_status.get("type")
+        )
+    
+    free_seats = max(0, settings.room_capacity - people_count)
+    occupied = False
+    if hp_data.state in ["course_en_cours", "course_prevue"]:
+        occupied = True
     
     return SystemStatus(
         occupied=occupied,

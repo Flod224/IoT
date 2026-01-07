@@ -1,0 +1,332 @@
+[
+    {
+        "id": "4732fa159cf57b5a",
+        "type": "tab",
+        "label": "SmartIGLab email notif",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2d63c4601cb1bdec",
+        "type": "inject",
+        "z": "4732fa159cf57b5a",
+        "name": "windowOpen",
+        "props": [
+            {
+                "p": "windowOpen",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "df6332945f082c2d",
+                "eeba17178b621220"
+            ]
+        ]
+    },
+    {
+        "id": "df6332945f082c2d",
+        "type": "debug",
+        "z": "4732fa159cf57b5a",
+        "name": "debug Window state",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "eeba17178b621220",
+        "type": "function",
+        "z": "4732fa159cf57b5a",
+        "name": "Alert window",
+        "func": "// État venant du capteur\nlet state = msg.windowOpen;\n\n// Heure actuelle\nlet now = new Date();\n\n// Heure limite notification (21:00)\nlet notifHour = 21;\nlet notifMinute = 0;\n\n// Vérification horaire\nlet afterNotifTime =\n    now.getHours() > notifHour ||\n    (now.getHours() === notifHour && now.getMinutes() >= notifMinute);\n\nif (state && afterNotifTime) {\n\n    msg.topic = \"SmartIGLab – Fenêtre ouverte après 21h\";\n\n    msg.payload = `\nBonjour,\n\nUne alerte a été détectée par le système SmartIGLab.\n\n━━━━━━━━━━━━━━━━━━━━━━\n📍 Localisation :\nAuditoire IGLab  \nRue de Houdain 9  \n7000 Mons  \n\nÉvénement :\nUne fenêtre est actuellement **OUVERTE** après 21h.\n\nHeure de détection :\n${now.toLocaleString(\"fr-BE\")}\n━━━━━━━━━━━━━━━━━━━━━━\n\nMerci de vérifier la situation dès que possible.\n\nCordialement,\n\nSmartIGLab  \n`;\n\n    return msg;\n}\n\n// Ne rien envoyer si condition non remplie\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "26091a5b5c2d96e1"
+            ]
+        ]
+    },
+    {
+        "id": "f83e1961af7bca17",
+        "type": "e-mail",
+        "z": "4732fa159cf57b5a",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "zoombaba221@gmail.com",
+        "dname": "Notification Concierge",
+        "x": 1000,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1c9887b2da8b0798",
+        "type": "function",
+        "z": "4732fa159cf57b5a",
+        "name": "Alert temp",
+        "func": "// lecture du payload du DHT22\nlet temp = msg.temperature;\n\n// Heure actuelle (pour info dans le mail)\nlet now = new Date();\n\n// Condition : température > 50°C\nif (temp > 50) {\n    msg.topic = \"SmartIGLab – Température critique\";\n    msg.payload = `\nBonjour,\n\nLe système SmartIGLab a détecté une température élevée dans l'auditoire.\n\n━━━━━━━━━━━━━━━━━━━━━━\n📍 Localisation :\nAuditoire IGLab  \nRue de Houdain 9  \n7000 Mons  \n\nÉvénement :\nLa température actuelle est **${temp}°C**, ce qui dépasse le seuil critique de 50°C.\n\nHeure de détection :\n${now.toLocaleString(\"fr-BE\")}\n━━━━━━━━━━━━━━━━━━━━━━\n\nMerci de vérifier la situation dès que possible.\n\nCordialement,\nSmartIGLab\n`;\n\n    return msg;\n}\n\n// Sinon, ne rien envoyer\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "405c8da88654c099"
+            ]
+        ]
+    },
+    {
+        "id": "73af4d73c2505ae1",
+        "type": "debug",
+        "z": "4732fa159cf57b5a",
+        "name": "debug DHT22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3dd64c2e7950f78c",
+        "type": "inject",
+        "z": "4732fa159cf57b5a",
+        "name": "Test temperature: 52 °C",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "{\"temperature\":52,\"humidity\":45}",
+        "payloadType": "json",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "1c9887b2da8b0798",
+                "73af4d73c2505ae1"
+            ]
+        ]
+    },
+    {
+        "id": "53b36783883858cb",
+        "type": "http request",
+        "z": "4732fa159cf57b5a",
+        "name": "API request",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://localhost:8000/api/status",
+        "tls": "4e0d486486fb47b8",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-API-Key",
+                "valueType": "other",
+                "valueValue": "smartiglab_nodered_secret_key_2026"
+            }
+        ],
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "3df9c0d209552139",
+                "2af07d96f38840b8"
+            ]
+        ]
+    },
+    {
+        "id": "6c4332f548741404",
+        "type": "inject",
+        "z": "4732fa159cf57b5a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "53b36783883858cb"
+            ]
+        ]
+    },
+    {
+        "id": "3df9c0d209552139",
+        "type": "debug",
+        "z": "4732fa159cf57b5a",
+        "name": "Payload from RPi",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2af07d96f38840b8",
+        "type": "function",
+        "z": "4732fa159cf57b5a",
+        "name": "Parser datas",
+        "func": "// Extraire toutes les données nécessaires\nlet payload = msg.payload;\n\n// Température et humidité\nlet temp = payload.environment.temperature;\nlet humidity = payload.environment.humidity;\n\n// État de la fenêtre\nlet windowOpen = payload.environment.window_open;\n\nmsg.temperature = temp;\nmsg.humidity = humidity;\nmsg.windowOpen = windowOpen;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 240,
+        "wires": [
+            [
+                "eeba17178b621220",
+                "1c9887b2da8b0798"
+            ]
+        ]
+    },
+    {
+        "id": "26091a5b5c2d96e1",
+        "type": "delay",
+        "z": "4732fa159cf57b5a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 200,
+        "wires": [
+            [
+                "f83e1961af7bca17"
+            ]
+        ]
+    },
+    {
+        "id": "405c8da88654c099",
+        "type": "delay",
+        "z": "4732fa159cf57b5a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 860,
+        "y": 280,
+        "wires": [
+            [
+                "f83e1961af7bca17"
+            ]
+        ]
+    },
+    {
+        "id": "4e0d486486fb47b8",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "cert.pem",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "3edafdcf83a4e745",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-email": "5.0.4"
+        }
+    }
+]
