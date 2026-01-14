@@ -13,7 +13,6 @@ Architecture:
 Endpoints:
   GET /           - Info API
   GET /status     - Données complètes (authentifié)
-  GET /healthz    - Health check (public)
 
 Déploiement:
   uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
@@ -25,7 +24,7 @@ import logging
 from pathlib import Path
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request, HTTPException, Depends, Cookie, Header
+from fastapi import FastAPI, Request, HTTPException, Depends, Cookie, Header, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, HTMLResponse, FileResponse, RedirectResponse
 from collections import defaultdict
@@ -34,6 +33,7 @@ import secrets
 import hashlib
 from datetime import datetime, timedelta
 from typing import Optional
+import shutil
 
 from app.config import settings
 from app.models import SystemStatus, HealthResponse, EnvironmentData, HyperplanningData, LoginRequest
@@ -80,7 +80,7 @@ def verify_session(session_token: Optional[str] = Cookie(None)):
     """
     Vérifie la validité de la session via cookie
     
-    Retourne username si valide, sinon lève 401 avec redirection login.
+    Retourne (username, role) si valide, sinon lève 401.
     """
     if not session_token:
         raise HTTPException(status_code=401, detail="Non authentifié")
@@ -96,7 +96,21 @@ def verify_session(session_token: Optional[str] = Cookie(None)):
             del active_sessions[session_token]
             raise HTTPException(status_code=401, detail="Session expirée")
         
-        return session['username']
+        return session['username'], session.get('role', 'user')
+
+
+def verify_admin_session(session_token: Optional[str] = Cookie(None)):
+    """
+    Vérifie que la session est valide ET que l'utilisateur est admin
+    
+    Retourne (username, role) si admin, sinon lève 403.
+    """
+    username, role = verify_session(session_token)
+    
+    if role != 'admin':
+        raise HTTPException(status_code=403, detail="Accès admin requis")
+    
+    return username, role
 
 
 def verify_api_key(x_api_key: Optional[str] = Header(None)):
@@ -131,9 +145,10 @@ async def lifespan(app: FastAPI):
     Gestionnaire de cycle de vie FastAPI
     
     Démarrage (avant yield):
-      1. Initialise vision YOLO (si activée)
-      2. Démarre capteurs GPIO (DHT22 + reed)
-      3. Lance client Hyperplanning
+      1. Initialise la base de données SQLite
+      2. Initialise vision YOLO (si activée)
+      3. Démarre capteurs GPIO (DHT22 + reed)
+      4. Lance client Hyperplanning
     
     Arrêt (après yield):
       - Arrête proprement tous les threads
@@ -142,6 +157,13 @@ async def lifespan(app: FastAPI):
     global vision_counter, sensor_reader, hyperplanning_client
     
     logger.info("=== Démarrage SmartIGLab Backend ===")
+    
+    # 0. Initialiser la base de données
+    try:
+        from app.database import init_database
+        init_database()
+    except Exception as e:
+        logger.error(f"✗ Erreur initialisation base de données: {e}")
     
     # 1. Module Vision YOLO
     if settings.vision_enabled:
@@ -297,33 +319,50 @@ async def login_page():
 @app.post("/login", include_in_schema=False)
 async def login(credentials: LoginRequest):
     """
-    Authentification utilisateur
+    Authentification utilisateur (user simple ou admin)
     
-    Vérifie credentials et crée session si valide.
+    Vérifie credentials et crée session avec rôle approprié.
     Retourne cookie de session.
     """
-    # Vérifier credentials
-    correct_username = secrets.compare_digest(credentials.username, settings.dashboard_username)
-    correct_password = secrets.compare_digest(credentials.password, settings.dashboard_password)
+    role = None
     
-    if not (correct_username and correct_password):
+    # Vérifier si c'est un admin
+    is_admin = (
+        secrets.compare_digest(credentials.username, settings.admin_username) and
+        secrets.compare_digest(credentials.password, settings.admin_password)
+    )
+    
+    if is_admin:
+        role = 'admin'
+    else:
+        # Vérifier si c'est un user simple
+        is_user = (
+            secrets.compare_digest(credentials.username, settings.dashboard_username) and
+            secrets.compare_digest(credentials.password, settings.dashboard_password)
+        )
+        
+        if is_user:
+            role = 'user'
+    
+    if not role:
         return JSONResponse(
             status_code=401,
             content={"success": False, "detail": "Identifiants invalides"}
         )
     
-    # Créer session
+    # Créer session avec rôle
     session_token = create_session_token(credentials.username)
     expires_at = datetime.now() + SESSION_DURATION
     
     with sessions_lock:
         active_sessions[session_token] = {
             'username': credentials.username,
+            'role': role,
             'expires_at': expires_at,
             'created_at': datetime.now()
         }
     
-    logger.info(f"Nouvelle session pour {credentials.username}")
+    logger.info(f"Nouvelle session pour {credentials.username} (rôle: {role})")
     
     # Retourner réponse avec cookie
     response = JSONResponse(content={"success": True})
@@ -358,6 +397,176 @@ async def logout(session_token: Optional[str] = Cookie(None)):
     response.delete_cookie(key="session_token")
     
     return response
+
+
+@app.get("/admin", response_class=HTMLResponse, include_in_schema=False)
+async def admin_page(session_token: Optional[str] = Cookie(None)):
+    """Page d'administration (réservée aux admins uniquement)"""
+    try:
+        verify_admin_session(session_token)  # Vérifier rôle admin
+        cleanup_expired_sessions()
+    except HTTPException:
+        return RedirectResponse(url="/login", status_code=302)
+    
+    html_path = Path(__file__).parent.parent.parent / "frontend" / "admin.html"
+    
+    if not html_path.exists():
+        raise HTTPException(status_code=404, detail="Page admin non trouvée")
+    
+    with open(html_path, "r", encoding="utf-8") as f:
+        return HTMLResponse(content=f.read())
+
+
+@app.post("/admin/upload-ics", include_in_schema=False)
+async def upload_ics(file: UploadFile = File(...), session_token: Optional[str] = Cookie(None)):
+    """Upload fichier .ICS pour hyperplanning"""
+    # Vérifier session admin
+    verify_admin_session(session_token)
+    
+    # Vérifier extension
+    if not file.filename.endswith('.ics'):
+        raise HTTPException(status_code=400, detail="Le fichier doit être au format .ICS")
+    
+    try:
+        # Sauvegarder le fichier
+        ics_path = Path(__file__).parent.parent / "Edt_Ho_IGLab.ics"
+        
+        with open(ics_path, "wb") as f:
+            shutil.copyfileobj(file.file, f)
+        
+        logger.info(f"Fichier ICS uploadé: {file.filename}")
+        
+        # Redémarrer hyperplanning client si actif
+        if hyperplanning_client:
+            hyperplanning_client.stop()
+            hyperplanning_client.start()
+            logger.info("Client Hyperplanning redémarré avec nouveau fichier")
+        
+        return JSONResponse(content={
+            "success": True,
+            "message": f"Fichier {file.filename} uploadé avec succès"
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur upload ICS: {e}")
+        raise HTTPException(status_code=500, detail=f"Erreur lors de l'upload: {str(e)}")
+
+
+@app.get("/admin/history", include_in_schema=False)
+async def get_history(hours: int = 24, session_token: Optional[str] = Cookie(None)):
+    """Récupère l'historique des capteurs"""
+    # Vérifier session admin
+    verify_admin_session(session_token)
+    
+    try:
+        from app.database import get_sensor_history
+        history = get_sensor_history(hours=hours)
+        
+        return JSONResponse(content={
+            "success": True,
+            "data": history,
+            "count": len(history)
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur récupération historique: {e}")
+        raise HTTPException(status_code=500, detail=f"Erreur: {str(e)}")
+
+
+@app.get("/admin/config", include_in_schema=False)
+async def get_config(session_token: Optional[str] = Cookie(None)):
+    """Récupère la configuration actuelle de rétention des données"""
+    verify_admin_session(session_token)
+    
+    return JSONResponse(content={
+        "success": True,
+        "db_retention_days": settings.db_retention_days
+    })
+
+
+@app.post("/admin/config", include_in_schema=False)
+async def update_config(retention_days: int, session_token: Optional[str] = Cookie(None)):
+    """Met à jour la configuration de rétention des données"""
+    verify_admin_session(session_token)
+    
+    if retention_days < 1 or retention_days > 365:
+        raise HTTPException(status_code=400, detail="Le nombre de jours doit être entre 1 et 365")
+    
+    try:
+        # Mettre à jour la config en mémoire
+        settings.db_retention_days = retention_days
+        
+        # Mettre à jour le fichier .env
+        env_path = Path(__file__).parent / ".env"
+        lines = []
+        found = False
+        
+        if env_path.exists():
+            with open(env_path, "r") as f:
+                lines = f.readlines()
+            
+            # Chercher et modifier la ligne DB_RETENTION_DAYS
+            for i, line in enumerate(lines):
+                if line.strip().startswith("DB_RETENTION_DAYS="):
+                    lines[i] = f"DB_RETENTION_DAYS={retention_days}\n"
+                    found = True
+                    break
+        
+        # Si pas trouvé, ajouter à la fin
+        if not found:
+            lines.append(f"\n# === BASE DE DONNÉES ===\n")
+            lines.append(f"DB_RETENTION_DAYS={retention_days}\n")
+        
+        # Écrire le fichier
+        with open(env_path, "w") as f:
+            f.writelines(lines)
+        
+        logger.info(f"Configuration mise à jour: rétention={retention_days} jours")
+        
+        return JSONResponse(content={
+            "success": True,
+            "message": f"Rétention mise à jour: {retention_days} jours"
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur mise à jour config: {e}")
+        raise HTTPException(status_code=500, detail=f"Erreur: {str(e)}")
+
+
+@app.post("/admin/cleanup", include_in_schema=False)
+async def trigger_cleanup(session_token: Optional[str] = Cookie(None)):
+    """Déclenche manuellement le nettoyage des vieilles données"""
+    verify_admin_session(session_token)
+    
+    try:
+        from app.database import cleanup_old_data
+        cleanup_old_data(days=settings.db_retention_days)
+        
+        return JSONResponse(content={
+            "success": True,
+            "message": f"Nettoyage effectué (données > {settings.db_retention_days} jours)"
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur nettoyage: {e}")
+        raise HTTPException(status_code=500, detail=f"Erreur: {str(e)}")
+
+
+@app.get("/user/info", include_in_schema=False)
+async def get_user_info(session_token: Optional[str] = Cookie(None)):
+    """
+    Retourne les informations de l'utilisateur courant
+    (username, rôle)
+    """
+    try:
+        username, role = verify_session(session_token)
+        return JSONResponse(content={
+            "success": True,
+            "username": username,
+            "role": role
+        })
+    except HTTPException:
+        raise HTTPException(status_code=401, detail="Non authentifié")
 
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)

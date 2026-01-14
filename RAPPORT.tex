@@ -1,0 +1,599 @@
+% % % % % % %
+%  Packages %
+% % % % % % %
+
+% Base packages
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[fpms,blason]{umons-coverpage-modif}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{listings}
+
+
+%---Mathematics
+\usepackage{amsmath}				% base package for mathematics
+\usepackage{amsfonts}				% base package for mathematics
+\usepackage{amssymb}				% base package for mathematics
+%\usepackage{amsthm}				% theorem and proof environments
+%\usepackage{cases}					% numcases environment
+%\usepackage{mathrsfs}				% \mathscf command ('L' of Laplace-Transform,...)
+
+
+
+\usepackage{enumitem}
+%---Bibliography
+\usepackage{url}					% to encore url
+\usepackage[backend = bibtex8, citestyle=numeric,bibstyle=numeric, sorting=none, style=numeric, useprefix=true, maxnames=10]{biblatex}
+\usepackage{csquotes}				% inverted commas in references
+%\addbibresource{biblio.bib}			% your .bib file
+
+%---Others
+%\usepackage{lipsum}					% Lorem ipsum (\lipsum command)
+
+
+
+
+% Page layout
+\usepackage[scale=0.80]{geometry}
+
+% Others
+\usepackage{siunitx}
+
+% UMons Template
+\usepackage[fpms]{umons-coverpage-modif}
+\umonsAuthor{
+    \begin{tabular}{p{0.45\textwidth} p{0.45\textwidth}}
+    \textbf{Membres du groupe :}  \\[0.4cm]
+    Ouiam \textsc{Bouazzati}  \\
+    Mamadou Mounir \textsc{Barry} \\
+    Maxim \textsc{Guessar} 
+    \end{tabular}
+}
+
+% The main title of your thesis
+\umonsTitle{Internet of things}
+% The sub-title of your thesis
+\umonsSubtitle{Rapport de projet}
+
+% The type of document: the reason of the thesis
+
+% Grades possibles : Master Ingénieur Civil Architecte, Master Ingénieur Civil en Chimie et Science des Matériaux, Master Ingénieur Civil Electricien, Master Ingénieur Civil en Informatique et Gestion, Master Ingénieur Civil Mécanicien, Master Ingénieur Civil en Mines et Géologue
+% Your supervisor(s)
+\umonsSupervisor{Professeur : \\
+%Madame/Monsieur Professeur Prenom \textsc{Nom} (promoteur)\\
+%Madame/Monsieur Prenom \textsc{Nom} (co-promoteur) \\
+%Madame/Monsieur Prenom \textsc{Nom} (rapporteur)
+Said \textsc{Mahmoudi}\\ 
+} 
+% The date (or academic year)
+\umonsDate{2025-2026}
+
+
+
+%---Floating objects (images, tables,...)
+\usepackage{float}					% better management of floating objects
+\usepackage{array}					% better management of tables
+\usepackage{graphicx}				% to include external images
+%\graphicspath{{Images/}}			% to put images in an 'Images' folder 
+%\usepackage{caption}				% /!\ has priority on "memoir" class
+%\usepackage{subcaption}			% subfigure and subtable environments
+%\usepackage{subfig}				% \subfloat command
+%\usepackage{wrapfig}				% wrapfigure environment
+%\usepackage[update]{epstopdf}		% to use '.eps' files with PDFLaTeX
+\usepackage{pdfpages}
+
+%---Code including
+\usepackage{listings}	
+\usepackage{listingsutf8}
+\lstset{
+breaklines=true
+            inputencoding=utf8,
+                extendedchars=true,
+                literate=%
+                {é}{{\'e}}{1}%
+                {è}{{\`e}}{1}%
+                {à}{{\`a}}{1}%
+                {ç}{{\c{c}}}{1}%
+                {œ}{{\oe}}{1}%
+                {ù}{{\`u}}{1}%
+                {É}{{\'E}}{1}%
+                {È}{{\`E}}{1}%
+                {À}{{\`A}}{1}%
+                {Ç}{{\c{C}}}{1}%
+                {Œ}{{\OE}}{1}%
+                {Ê}{{\^E}}{1}%
+                {ê}{{\^e}}{1}%
+                {î}{{\^i}}{1}%
+                {ô}{{\^o}}{1}%
+                {û}{{\^u}}{1}%
+                {ë}{{\¨{e}}}1
+                {û}{{\^{u}}}1
+                {â}{{\^{a}}}1
+                {Â}{{\^{A}}}1
+                {Î}{{\^{I}}}1
+        }			% general package (can be tuned)
+%\usepackage[framed]{mcode}			% to include Matlab code
+									% /!\ you need the "mcode.sty" file
+
+%---Units from International System
+\usepackage{siunitx}				% \SI{}{} command (units with good typography)
+%\DeclareSIUnit\baud{baud}			% definition of the "baud" unit
+%\DeclareSIUnit\bit{bit}				% definition of the "bit" unit
+
+%---Drawing
+\usepackage{tikz}					% useful package for drawing
+%\usepackage[european]{circuitikz} 	% to draw electrical circuits
+
+% Appendix
+%\usepackage{appendix}
+%\renewcommand{\appendixtocname}{Annexes :}
+
+
+
+
+% % % % % % %
+% Document	%
+% % % % % % 
+%---"hyperref" package				% /!\ it must be the last package
+\usepackage[hidelinks]{hyperref}	% clickable links (table of contents,...)
+
+\umonsSubtitle{Rapport SmartIGLab}
+
+% Numéroter les sous-sous-sections
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+
+
+% Réinitialiser la numérotation des sections
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+\lstdefinelanguage{Kotlin}{
+  morekeywords={abstract, actual, annotation, companion, const, crossinline, data, enum, expect, external, final, infix, inline, inner, internal, lateinit, noinline, open, operator, out, override, private, protected, public, reified, sealed, suspend, tailrec, vararg, Boolean, Byte, Char, Double, Float, Int, Long, Short, Unit, String, val, var, fun, class, object, interface, package, import, if, else, when, for, while, do, try, catch, finally, throw, return, as, is, in, this, super, null, true, false},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morestring=[b]'
+}
+
+
+% Configuration des listings pour le code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    rulecolor=\color{black},
+    tabsize=4,
+    language=Python
+}
+
+
+\lstset{style=mystyle}
+
+\begin{document}
+\umonsCoverPage
+
+% Ajout d'une section pour les encadreurs après la page de garde
+\cleardoublepage
+\pagenumbering{arabic}
+\vspace{1cm}
+
+\vspace{2cm}
+\noindent
+
+
+\tableofcontents
+\newpage
+
+% ======================
+% 1. INTRODUCTION
+% ======================
+\section{Introduction}
+
+
+Ce projet, réalisé dans le cadre du cours d'Internet des Objets du Master 2, vise à développer un système intelligent de gestion d'auditoire. L'objectif est de créer une solution autonome permettant de monitorer en temps réel l'occupation et les conditions environnementales d'une salle de classe, tout en intégrant l'hyperplanning.
+
+
+
+Le système SmartIGLab répond à trois objectifs principaux~:
+\begin{itemize}
+    \item Détection automatique du nombre d'occupants par vision artificielle
+    \item Monitoring environnemental (température, humidité, état d'ouverture et de fermeture des fenêtres)
+    \item Synchronisation avec l'emploi du temps et interface web sécurisée
+\end{itemize}
+
+La solution est entièrement embarquée sur Raspberry Pi 4b, combinant capteurs physiques, traitement d'image, automatisation des alertes via Node-Red et serveur web en HTTPS.
+
+% ======================
+% 2. ARCHITECTURE SYSTÈME
+% ======================
+\section{Architecture du système}
+
+\subsection{Conception générale}
+
+
+L'architecture de SmartIGLab adopte une approche centralisée où le Raspberry Pi héberge simultanément le backend et le frontend. Cette conception simplifie le déploiement et réduit les points de défaillance en concentrant toute la logique sur une seule plateforme.
+
+La figure~\ref{fig:architecture} illustre les interactions entre les composants du système. Les capteurs physiques communiquent avec le Raspberry Pi via USB et GPIO, tandis que les clients web accèdent au système via HTTPS sur le port 8000. L'emploi du temps est chargé depuis des fichiers locaux (JSON ou ICS) rafraîchis périodiquement.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        box/.style={rectangle, draw, fill=blue!20, text width=3cm, text centered, minimum height=1cm},
+        sensor/.style={rectangle, draw, fill=green!20, text width=2.5cm, text centered, minimum height=0.8cm},
+        arrow/.style={->, thick}
+    ]
+        % Raspberry Pi (centre)
+        \node[box, fill=red!20, minimum height=5cm, text width=4.5cm] (pi) at (0,0) {
+            Raspberry Pi 4 \\
+            \vspace{0.2cm}
+            Backend FastAPI \\
+            Frontend Web \\
+            Gestion sessions \\
+            \vspace{0.2cm}
+            {\footnotesize Hyperplanning:} \\
+            {\footnotesize JSON/ICS}
+        };
+        
+        % Capteurs (gauche)
+        \node[sensor] (cam) at (-5, 2) {Caméra USB};
+        \node[sensor] (dht) at (-5, 0.5) {DHT22};
+        \node[sensor] (reed) at (-5, -1) {Reed Switch};
+        
+        % Client web (droite)
+        \node[box, fill=orange!20] (web) at (5, 1.5) {Navigateur Web \\ (HTTPS)};
+        \node[box, fill=purple!20] (nodered) at (5, -1.5) {Node-RED \\ Alertes email};
+        
+        % Flèches
+        \draw[arrow] (cam) -- (pi) node[midway, above, sloped] {\tiny USB};
+        \draw[arrow] (dht) -- (pi) node[midway, above] {\tiny GPIO 4};
+        \draw[arrow] (reed) -- (pi) node[midway, below] {\tiny GPIO 17};
+        \draw[arrow, <->] (pi) -- (web) node[midway, above] {\tiny Port 8000};
+        \draw[arrow, <->] (pi) -- (nodered) node[midway, below] {\tiny API};
+    \end{tikzpicture}
+    \caption{Architecture générale du système SmartIGLab}
+    \label{fig:architecture}
+\end{figure}
+
+\newpage
+\subsection{Modularité logicielle}
+Le système est structuré en plusieurs modules indépendants communiquant via des interfaces bien définies. Le module vision s'exécute dans un thread séparé, permettant une détection continue des personnes sans bloquer les autres opérations. Parallèlement, le module capteurs effectue des lectures périodiques des GPIO dans son propre thread pour garantir des mesures régulières de température et d'humidité. Le module Hyperplanning lis le fichier JSON ou ICS chaque minute afin de prendre en compte les changements réguliers. Ces trois modules publient leurs données dans des structures thread-safe, consultables par l'API REST implémentée avec FastAPI. Cette dernière expose les endpoints JSON consommés par le frontend, une interface web responsive qui s'actualise automatiquement.
+
+% ======================
+% 3. COMPOSANTS MATÉRIELS
+% ======================
+\section{Composants matériels}
+
+Le système utilise un Raspberry Pi 4B, une webcam USB pour le comptage en temps réel d'occupants, un capteur DHT22 pour la température et l'humidité, ainsi qu'un reed switch pour l'état d'ouverture des fenêtres (Bien que présent physiquement dans le montage, le reed switch n'est pas exploité fonctionnellement dans la version finale). Le câblage est simple et entièrement alimenté par le Raspberry Pi. Le schéma de branchement récapitulatif est présenté ci-dessous.
+
+
+Le câblage des capteurs sur les broches GPIO du Raspberry Pi est détaillé ci-dessous~:
+
+\begin{itemize}
+    \item \textbf{DHT22}~: GPIO 4 pour le signal de données, alimentation 3.3V , ground 
+    \item \textbf{Reed Switch}~: GPIO 17 avec résistance pull-up interne activée, ground
+    \item \textbf{Caméra USB}~: Connexion directe sur port USB
+
+\end{itemize}
+
+L'alimentation des capteurs est assurée directement par le Raspberry Pi, évitant l'usage d'une source externe.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Images/montage.png}
+    \caption{Branchement physique des capteurs sur Raspberry Pi 4}
+    \label{fig:branchement}
+\end{figure}
+\newpage
+Le boîtier a été conçu et découpé au laser. Nous avons choisi du Multiplex 3.6 mm. L'assemblage intègre l'écran tactile en façade, le Raspberry Pi et les capteurs à l'intérieur, offrant un rendu professionnel et compact.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\textwidth]{Images/boitier 1.jpg}
+\hfill
+\includegraphics[width=0.48\textwidth]{Images/boitier2.jpg}
+\caption{Montage final SmartIGLab.}
+\label{fig:xss-chaine}
+\end{figure}
+
+
+
+% ======================
+% 4. IMPLÉMENTATION LOGICIELLE
+% ======================
+\section{Implémentation logicielle}
+
+\subsection{Architecture backend}
+
+Le backend du système est développé en Python en utilisant le framework FastAPI, reconnu pour ses performances élevées et son support natif de la programmation asynchrone. L'architecture modulaire du code sépare clairement les responsabilités~: le fichier \texttt{main.py} constitue le point d'entrée de l'application et gère le cycle de vie des services, \texttt{config.py} centralise la configuration via des variables d'environnement, \texttt{models.py} définit les schémas de données avec Pydantic, \texttt{sensors.py} encapsule la logique de lecture des GPIO, \texttt{hyperplanning.py} implémente la gestion du planning, et \texttt{people\_counter.py} gère le système de vision par ordinateur.
+
+FastAPI propose un mécanisme de gestion du cycle de vie permettant d'initialiser et de libérer proprement les ressources. Lors du démarrage de l'application, les trois services principaux (vision, capteurs et hyperplanning) sont lancés dans leurs threads respectifs. À l'arrêt, une séquence ordonnée garantit la fermeture propre des connexions matérielles et la libération des ressources. Cette approche évite les fuites de ressources et assure la stabilité du système lors de redémarrages.
+
+\subsection{Détection de personnes par vision artificielle}
+
+Le module de vision repose sur YOLOv8n, la variante nano du modèle YOLO version 8 développé par Ultralytics. Ce choix s'impose dans un contexte embarqué où les ressources de calcul sont limitées. Le pipeline de détection suit quatre étapes séquentielles. La première consiste en la capture d'une image depuis la caméra USB via OpenCV. Cette image est ensuite soumise au modèle YOLO qui effectue l'inférence en filtrant uniquement la classe \textit{person} du jeu de données COCO. Le comptage s'effectue en dénombrant les boîtes englobantes détectées avec un seuil de confiance fixé à 0,5. Enfin, le résultat est publié dans une structure de données thread-safe accessible par l'API REST.
+\newpage
+Plusieurs optimisations ont été nécessaires pour permettre l'exécution fluide sur Raspberry Pi. L'utilisation du modèle YOLOv8n, le plus compact de la famille, réduit drastiquement les besoins en calcul. La résolution d'entrée est limitée à 640x480 pixels, ce qui diminue la charge processeur tout en préservant une précision acceptable. Le taux de rafraîchissement est volontairement bridé à environ 2 images par seconde, évitant ainsi la saturation du processeur. Enfin, l'absence d'affichage vidéo (mode headless) économise des ressources graphiques précieuses.
+
+\subsection{Lecture des capteurs GPIO}
+
+La lecture des capteurs environnementaux s'effectue dans un thread dédié pour éviter tout blocage de l'API principale. Le capteur DHT22 utilise un protocole de communication temporellement critique qui peut occasionnellement échouer en raison d'interruptions du système d'exploitation. Une stratégie de gestion d'erreurs robuste capture ces exceptions transitoires et retourne des valeurs nulles, permettant au système de continuer son fonctionnement normal. Le reed switch, configuré avec une résistance de tirage interne, devrait théoriquement fournir un état logique stable reflétant la position de la fenêtre.
+
+\subsection{Intégration Hyperplanning}
+
+Le module \texttt{hyperplanning.py} synchronise automatiquement l'affichage avec l'emploi du temps. Il s'exécute dans un thread séparé avec rafraîchissement toutes les 60 secondes, exposant l'état actuel via l'endpoint \texttt{/status}.
+
+
+
+Deux sources de données sont disponibles, sélectionnables au démarrage via le script \texttt{start\_https.sh}~:
+
+\paragraph*{Mode JSON} Le fichier \texttt{schedule\_mock.json} contient un emploi du temps statique pour les tests et démonstrations. Aucune connexion externe n'est requise, les données sont éditables manuellement et immédiatement disponibles.
+
+\paragraph*{Mode ICS} Le fichier \texttt{Edt\_Ho\_IGLab.ics} exporté depuis Hyperplanning contient le calendrier réel. Le parsing est effectué avec la bibliothèque \texttt{icalendar}, et les métadonnées (enseignant, formation, type) sont extraites du champ \texttt{description} par expressions régulières.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Images/choix json ou ics.png}
+    \caption{Sélection du mode Hyperplanning au démarrage}
+    \label{fig:placeholder}
+\end{figure}
+
+
+
+L'algorithme compare l'heure actuelle (convertie en minutes depuis minuit) aux plages horaires des cours du jour pour déterminer l'état \textit{course\_en\_cours} ou \textit{libre}.
+
+
+\subsection{Système d'alertes Node-RED}
+
+Un système de notification automatique a été implémenté avec Node-RED pour surveiller les conditions critiques de l'auditoire et alerter par email en cas d'anomalie. Node-RED interroge l'API du Raspberry Pi toutes les 30 secondes via une requête HTTPS authentifiée par clé API.
+
+Deux types d'alertes ont été configurés~:
+
+\paragraph*{Alerte fenêtre ouverte} Si une fenêtre reste ouverte après 21h00, une notification par email est envoyée automatiquement. Cette fonctionnalité vise à éviter le gaspillage énergétique et garantir la sécurité du local en dehors des heures d'utilisation.
+
+\paragraph*{Alerte température critique} Lorsque la température dépasse 50 degré Celsius, une alerte est déclenchée pour signaler un risque potentiel (surchauffe, incendie). Ce seuil volontairement élevé évite les fausses alertes tout en garantissant la détection de situations dangereuses.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{Images/noderedflows.png}
+    \caption{Architecture du flow node-red}
+    \label{fig:placeholder}
+\end{figure}
+
+Les emails générés contiennent la localisation précise (Auditoire IGLab, Rue de Houdain 9), la nature de l'événement, la valeur mesurée et le moment exacte de détection. Cette intégration démontre l'extensibilité du système et sa capacité à s'interfacer avec des outils externes de workflow automation.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.48\textwidth]{Images/windowalerte.png}
+\hfill
+\includegraphics[width=0.4\textwidth]{Images/tempalerte.png}
+\caption{Alertes reçues}
+\label{fig:xss-chaine}
+\end{figure}
+\subsection{Sécurité et authentification}
+
+La sécurité du système repose sur trois piliers complémentaires. L'authentification utilise un mécanisme de sessions basé sur des cookies sécurisés et un système à deux niveaux d'accès. 
+
+\paragraph*{Système d'authentification à deux niveaux} Le système SmartIGLab propose deux profils distincts\:
+
+\begin{itemize}
+    \item \textbf{Utilisateur simple}~: Accès au dashboard en consultation avec visualisation des données en temps réel (occupation, température, humidité, état des fenêtres, emploi du temps). Les utilisateurs simples ne peuvent pas accéder à l'interface d'administration et ne voient pas le bouton d'accès admin dans le dashboard.
+    \item \textbf{Administrateur}~: Accès complet au dashboard ainsi qu'à l'interface d'administration. Les admins peuvent configurer la rétention des données, téléverser des fichiers ICS Hyperplanning, consulter l'historique des capteurs et déclencher manuellement le nettoyage des données.
+\end{itemize}
+
+Chaque profil dispose de credentials distincts configurables via le fichier `.env`. L'authentification est vérifiée lors de la connexion, et un rôle est assigné à la session correspondante. Les endpoints admin sont protégés et retournent une erreur HTTP 403 (Accès refusé) si l'utilisateur n'a pas les permissions requises.
+
+\paragraph*{Gestion des sessions} Chaque session est identifiée par un jeton généré via SHA-256, garantissant une entropie de 256 bits. Les cookies sont configurés avec les attributs HttpOnly pour prévenir les attaques XSS, Secure pour restreindre la transmission au protocole HTTPS, et SameSite=Lax pour se protéger contre le CSRF. La durée de validité des sessions est fixée à 24 heures, offrant un équilibre entre commodité et sécurité. Un nettoyage périodique des sessions expirées est effectué automatiquement.
+
+\paragraph*{Chiffrement des communications} Le chiffrement des communications est assuré par un certificat SSL auto-signé généré avec OpenSSL. Bien que ce type de certificat génère un avertissement dans les navigateurs, il offre néanmoins un chiffrement robuste RSA 4096 bits adapté à un déploiement en réseau local. La clé privée et le certificat public sont stockés dans un répertoire dédié et utilisés au démarrage du serveur Uvicorn.
+
+\paragraph*{Protection contre les abus} Une protection basique contre les dénis de service est implémentée via un middleware de limitation de taux. Chaque adresse IP est limitée à 60 requêtes par minute, ce qui permet une utilisation normale tout en décourageant les comportements abusifs. Les requêtes excédentaires reçoivent une réponse HTTP 429 (Too Many Requests).
+
+% ======================
+% 5. INTERFACE UTILISATEUR
+% ======================
+\newpage
+\section{Interface utilisateur}
+
+Dans cette section, nous présentons brièvement les interfaces principales du système.
+
+\subsection{Authentification}
+
+La page de connexion, illustrée dans la figure~\ref{fig:login}, constitue le point d'entrée sécurisé du système. Le formulaire implémente une validation côté client qui vérifie la présence et le format des identifiants avant toute soumission au serveur. En cas d'échec d'authentification, un message d'erreur explicite accompagné d'une animation visuelle (effet de tremblement) informe l'utilisateur. Les requêtes d'authentification sont transmises au serveur via l'API Fetch en utilisant le format JSON, évitant ainsi les dépendances à des bibliothèques de formulaires complexes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/login_page.png}
+    \caption{Page de connexion sécurisée}
+    \label{fig:login}
+\end{figure}
+
+\subsection{Tableau de bord}
+
+Le tableau de bord se décline en deux modes d'affichage selon l'état d'occupation de la salle. Lorsqu'aucun cours n'est programmé (figure~\ref{fig:dashboard_libre}), un badge vert affiche clairement le statut "SALLE LIBRE". Les informations contextuelles incluent le nombre d'occupants détecté par le système de vision, l'état théorique des fenêtres, ainsi que les mesures de température et d'humidité. Un bouton de déconnexion positionné dans le coin supérieur droit permet de terminer la session en toute sécurité. Afin d'éviter toute interaction avec les utilisateurs via l'écran pouvant compromettre l'intégrité et/ou la disponibilité des données, la fonctionnalité tactile de l'écran sera désactivée.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/json_interface_libre.png}
+    \caption{Tableau de bord en mode salle libre}
+    \label{fig:dashboard_libre}
+\end{figure}
+
+Lorsqu'un cours est en session (figure~\ref{fig:dashboard_occupe}), l'interface adapte son affichage pour mettre en évidence les informations pédagogiques. Le titre du cours s'affiche, accompagné des horaires de début et de fin ainsi que du nom de l'enseignant. Un badge rouge signale clairement le type d'événement(Cours, TP, Exercices ...). Nous avons décidé de ne pas afficher le nombre d'occupants ou l'état des fenêtres lors d'un cours car ces détails ne sont pas importants pendant ces périodes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/json_interface_cours.png}
+    \caption{Tableau de bord lors d'un cours en session}
+    \label{fig:dashboard_occupe}
+\end{figure}
+\newpage
+
+\subsection{Interface d'administration}
+
+L'interface d'administration est accessible uniquement aux utilisateurs disposant des credentials administrateur. Cette interface dédiée permet une gestion complète du système sans accès aux utilisateurs simples.
+
+\paragraph*{Configuration de la rétention des données} Un formulaire dédié permet aux administrateurs de configurer automatiquement la politique de rétention des données historiques. Ce paramètre détermine le nombre de jours (entre 1 et 365) pendant lesquels les relevés de capteurs sont conservés en base de données. La configuration est persistée dans le fichier `.env` et prise en compte immédiatement par le système. Un bouton de nettoyage manuel permet de déclencher instantanément la suppression des données obsolètes, utile pour libérer de l'espace disque en cas de besoin urgent.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/admin_retention.png}
+    \caption{Interface d'administration - Configuration de la rétention des données}
+    \label{fig:admin_retention}
+\end{figure}
+
+\paragraph*{Gestion des fichiers Hyperplanning} Un espace de téléversement permet aux administrateurs de charger un nouveau fichier ICS à partir de l'interface web, sans nécessiter d'accès au serveur en ligne de commande. Une fois le fichier uploadé, le système redémarre automatiquement le client Hyperplanning pour prendre en compte les modifications immédiatement. Une interface glisser-déposer facilite l'interaction.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/admin_upload_ics.png}
+    \caption{Interface d'administration - Téléversement fichier ICS Hyperplanning}
+    \label{fig:admin_upload}
+\end{figure}
+
+\paragraph*{Visualisation de l'historique} Un graphique interactif affiche l'historique des mesures de température et d'humidité sur des périodes sélectionnables (24 heures, 48 heures, 7 jours). Cette fonctionnalité facilite l'identification de tendances ou d'anomalies dans les conditions environnementales de la salle.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Images/admin_history.png}
+    \caption{Interface d'administration - Historique des capteurs avec graphique}
+    \label{fig:admin_history}
+\end{figure}
+
+\paragraph*{Accès au dashboard} Un bouton dédié en haut à droite de l'interface admin permet aux administrateurs de naviguer facilement vers le dashboard standard pour consulter les données en temps réel.
+\newpage
+\subsection{Actualisation dynamique}
+
+Le tableau de bord se rafraîchit automatiquement toutes les cinq secondes grâce à des requêtes AJAX asynchrones vers l'endpoint \texttt{/status}. Cette approche évite le rechargement complet de la page tout en maintenant les informations à jour. La fréquence de rafraîchissement représente un compromis entre réactivité perçue et charge réseau, jugée acceptable dans le contexte d'un réseau local.
+
+La détection du rôle de l'utilisateur s'effectue via un appel à l'endpoint \texttt{/user/info} au chargement de la page. Cet endpoint retourne le nom d'utilisateur et le rôle associé. Si l'utilisateur est un simple user (non-admin), le bouton d'accès à l'interface admin est masqué via JavaScript, rendant inaccessible cette zone aux utilisateurs non autorisés.
+
+
+
+% ======================
+% 7. BUDGET
+% ======================
+\section{Budget}
+
+Durant ce projet, un changement de composant a été effectué, ayant eu un impact mineur sur le budget du projet SmartIGLab~: \\ \\
+\noindent
+Initialement, nous étions partis sur une solution utilisant une carte de développement ESP32-P4 avec un écran tactile de 10,1 pouces, pour un coût de 47,15\texteuro~(montant figurant sur la facture du projet). \\
+\\
+\noindent
+Cependant, des problèmes de connectivité avec le système sont apparus et, à terme, celui-ci ne s'allumait plus. Nous avons donc opté pour une solution moins coûteuse et dotée d'une architecture simplifiée, centrée sur une Raspberry Pi, le rôle de l'ESP32 pouvant ici être assuré par cette dernière. \\
+\\
+\noindent
+Le tableau suivant récapitule les coûts des composants et matériaux finalement utilisés pour la réalisation du système SmartIGLab :
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Composant} & \textbf{Prix (\texteuro
+)} \\
+\hline
+Écran tactile & 33,5\\
+Boîtier bois (contreplaqué) & 10\\
+Découpe laser (temps machine) & 5\\
+\hline
+\textbf{Total} & \textbf{48,5} \\
+\hline
+\end{tabular}
+\caption{Récapitulatif du budget final du projet SmartIGLab}
+\label{tab:budget}
+\end{table}
+\noindent
+Le coût total du projet s'élève à 48,5\texteuro~(écran + boîtier), au lieu de 47,15\texteuro~(écran seul), ce qui représente une différence infime par rapport au budget initial (facture) et démontre qu'une solution IoT complète et fonctionnelle peut être développée avec un budget raisonnable.
+
+% ======================
+% 8. CONCLUSION
+% ======================
+\newpage
+\section{Conclusion}
+
+\subsubsection*{Bilan du projet}
+
+Le projet SmartIGLab a permis de développer avec succès un système IoT complet et fonctionnel répondant à la majorité des objectifs initialement fixés. Le comptage de personnes en temps réel fonctionne de manière satisfaisante grâce à l'intégration de YOLO. Le monitoring de la température et de l'humidité via le DHT22 offre des mesures fiables et continues. L'intégration avec Hyperplanning permet un affichage contextuel des cours en session. Le dashboard web sécurisé via HTTPS et sessions garantit un accès à distance protégé. L'architecture entièrement embarquée sur Raspberry Pi démontre la viabilité d'une solution autonome. Seule la détection de l'état des fenêtres via le reed switch n'a pu être finalisée dans les délais impartis.
+
+
+\subsubsection*{Difficultés rencontrées et solutions}
+
+
+Le problème le plus persistant du projet concerne le reed switch destiné à détecter l'état des fenêtres. Malgré un câblage conforme aux spécifications techniques et vérifié à plusieurs reprises, le capteur ne répond pas correctement. Les investigations ont confirmé que le câblage physique est correct, mais même lors de tests isolés avec un script Python, la lecture GPIO reste bloquée sur un état (constamment HIGH, ou constamment LOW si l'on inverse la polarité/pull). L'intégration dans le système complet reproduit exactement ce symptôme.
+
+
+
+
+\subsubsection*{Perspectives d'évolution}
+
+Plusieurs axes d'amélioration peuvent être envisagés pour des versions futures du système. La résolution du dysfonctionnement du reed switch demeure prioritaire pour compléter les fonctionnalités environnementales. L'ajout d'un système de tracking vidéo permettrait de suivre les trajectoires individuelles et de compter précisément les entrées et sorties. L'intégration d'une base de données PostgreSQL ou InfluxDB offrirait la possibilité de conserver un historique des mesures et d'effectuer des analyses statistiques. Un système d'alertes par email ou SMS pourrait notifier les administrateurs en cas d'anomalie détectée. Des techniques de machine learning plus avancées, telles que l'analyse comportementale ou la prédiction d'occupation, enrichiraient les capacités du système. La scalabilité pourrait être améliorée en déployant le système dans plusieurs salles avec un serveur central de coordination. Enfin, le développement d'applications mobiles natives iOS et Android faciliterait l'accès pour les utilisateurs en mobilité.
+
+\newpage
+% ======================
+% RÉFÉRENCES
+% ======================
+\begin{thebibliography}{9}
+
+\bibitem{yolov8}
+Ultralytics, 
+\textit{YOLOv8 Documentation}, 
+2024.
+\url{https://docs.ultralytics.com/}
+
+\bibitem{fastapi}
+Sebastián Ramírez, 
+\textit{FastAPI Framework}, 
+2024.
+\url{https://fastapi.tiangolo.com/}
+
+\bibitem{rpigpio}
+Raspberry Pi Foundation, 
+\textit{Raspberry Pi GPIO Documentation}, 
+2024.
+\url{https://www.raspberrypi.com/documentation/}
+
+\bibitem{adafruit_dht}
+Adafruit Industries, 
+\textit{DHT Sensor Library for CircuitPython}, 
+GitHub repository,
+2024.
+\url{https://github.com/adafruit/Adafruit_CircuitPython_DHT}
+
+\bibitem{opencv}
+OpenCV Team, 
+\textit{OpenCV Documentation}, 
+2024.
+\url{https://docs.opencv.org/}
+
+\end{thebibliography}
+
+
+
+\end{document}

@@ -182,6 +182,7 @@ class SensorReader:
         
         Arrondit les valeurs à 1 décimale. Compte les erreurs consécutives
         pour alerter en cas de problème matériel persistant.
+        Enregistre dans la base de données.
         
         Args:
             temp: Température en °C (None si erreur)
@@ -195,6 +196,19 @@ class SensorReader:
                 self._window_open = window
                 self._last_update = time.time()
                 self._error_count = 0
+                
+                # Enregistrer dans la base de données
+                try:
+                    from app.database import add_sensor_reading
+                    add_sensor_reading(
+                        timestamp=self._last_update,
+                        temperature=self._temperature,
+                        humidity=self._humidity,
+                        window_open=self._window_open
+                    )
+                except Exception as e:
+                    logger.debug(f"Erreur enregistrement DB: {e}")
+                    
             elif GPIO_AVAILABLE:  # Only count errors if GPIO should be working
                 self._error_count += 1
                 if self._error_count % 10 == 0:

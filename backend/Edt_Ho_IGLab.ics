@@ -1,0 +1,2091 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID;LANGUAGE=fr:Copyright Index-Education - HYPERPLANNING 2025
+METHOD:PUBLISH
+X-CALSTART:20250908T000000Z
+X-CALEND:20260809T000000Z
+X-WR-CALNAME;LANGUAGE=fr:HYP - 400015 Ho.IGLab - du 08 septembre 2025 au 09
+  août 2026
+X-WR-CALDESC;LANGUAGE=fr:Emploi du temps de 400015 Ho.IGLab généré par le l
+ ogiciel HP (©INDEX ÉDUCATION) le 30 déc. 2025 - Université de Mons - valab
+ le sur la période du 08 septembre 2025 au 09 août 2026 - Semaines : semain
+ e 37 - 32
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-103332-26-Ho.IGLab-Index-Education
+DTSTART:20260305T093000Z
+DTEND:20260305T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-001 - Structures de données et algo. - M. BENJEL
+ LOUN - .BAB1 - Ir. civil\, .BAB2 - Ir. civil architecte - Exercices
+LOCATION;LANGUAGE=fr:Ho.06PC\, Ho.12\, Ho.AteliersArchi\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-001 - Structures de données et algo.\nE
+ nseignant : M. BENJELLOUN\nFormations : .BAB1 - Ir. civil\, .BAB2 - Ir. ci
+ vil architecte\nSalles : Ho.06PC\, Ho.12\, Ho.AteliersArchi\, Ho.IGLab\nTy
+ pe : Exercices\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-001 - Structures de données et alg
+ o.<br/>Enseignant : M. BENJELLOUN<br/>Formations : .BAB1 - Ir. civil\, .BA
+ B2 - Ir. civil architecte<br/>Salles : Ho.06PC\, Ho.12\, Ho.AteliersArchi\
+ , Ho.IGLab<br/>Type : Exercices<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-103332-30-Ho.IGLab-Index-Education
+DTSTART:20260402T083000Z
+DTEND:20260402T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-001 - Structures de données et algo. - M. BENJEL
+ LOUN - .BAB1 - Ir. civil\, .BAB2 - Ir. civil architecte - Exercices
+LOCATION;LANGUAGE=fr:Ho.06PC\, Ho.12\, Ho.AteliersArchi\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-001 - Structures de données et algo.\nE
+ nseignant : M. BENJELLOUN\nFormations : .BAB1 - Ir. civil\, .BAB2 - Ir. ci
+ vil architecte\nSalles : Ho.06PC\, Ho.12\, Ho.AteliersArchi\, Ho.IGLab\nTy
+ pe : Exercices\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-001 - Structures de données et alg
+ o.<br/>Enseignant : M. BENJELLOUN<br/>Formations : .BAB1 - Ir. civil\, .BA
+ B2 - Ir. civil architecte<br/>Salles : Ho.06PC\, Ho.12\, Ho.AteliersArchi\
+ , Ho.IGLab<br/>Type : Exercices<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251210T093427Z
+UID:Cours-119109-14-Ho.IGLab-Index-Education
+DTSTART:20251211T073000Z
+DTEND:20251211T103000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-025 - Caractérisation du sous-sol - M. CAMPEOL\,
+  M. GODERNIAUX - .MAB2 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.21\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-025 - Caractérisation du sous-sol\nEnse
+ ignants : M. CAMPEOL\, M. GODERNIAUX\nFormation : .MAB2 - Ir. civil mines 
+ et géologue\, FS\nSalles : Ho.21\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-025 - Caractérisation du sous-sol<
+ br/>Enseignants : M. CAMPEOL\, M. GODERNIAUX<br/>Formation : .MAB2 - Ir. c
+ ivil mines et géologue\, FS<br/>Salles : Ho.21\, Ho.IGLab<br/>Type : TP<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251210T093427Z
+UID:Cours-119109-15-Ho.IGLab-Index-Education
+DTSTART:20251218T073000Z
+DTEND:20251218T103000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-025 - Caractérisation du sous-sol - M. CAMPEOL\,
+  M. GODERNIAUX - .MAB2 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-025 - Caractérisation du sous-sol\nEnse
+ ignants : M. CAMPEOL\, M. GODERNIAUX\nFormation : .MAB2 - Ir. civil mines 
+ et géologue\, FS\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-025 - Caractérisation du sous-sol<
+ br/>Enseignants : M. CAMPEOL\, M. GODERNIAUX<br/>Formation : .MAB2 - Ir. c
+ ivil mines et géologue\, FS<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-156683-24-Ho.IGLab-Index-Education
+DTSTART:20260216T123000Z
+DTEND:20260216T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-014 - MachDeepLearnMultRetr - Mme COOLS\, M. MAH
+ MOUDI - .MAB1 - Ir. civil informatique et gestion\, FS AIDA - <.MAB1 - Sc.
+  informatiques\, FA> Data Science and Artifical Intelligence\, <.MA60 - Sc
+ . informatiques> Data Science and Artificial Intelligence - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-014 - MachDeepLearnMultRetr\nEnseignant
+ s : Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et
+  gestion\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Data
+  Science and Artifical Intelligence\, &lt\;.MA60 - Sc. informatiques&gt\; 
+ Data Science and Artificial Intelligence\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-014 - MachDeepLearnMultRetr<br/>En
+ seignants : Mme COOLS\, M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil info
+ rmatique et gestion\, FS AIDA<br/>Groupe : &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. infor
+ matiques&gt\; Data Science and Artificial Intelligence<br/>Salle : Ho.IGLa
+ b<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-156683-25-Ho.IGLab-Index-Education
+DTSTART:20260223T123000Z
+DTEND:20260223T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-014 - MachDeepLearnMultRetr - Mme COOLS\, M. MAH
+ MOUDI - .MAB1 - Ir. civil informatique et gestion\, FS AIDA - <.MAB1 - Sc.
+  informatiques\, FA> Data Science and Artifical Intelligence\, <.MA60 - Sc
+ . informatiques> Data Science and Artificial Intelligence - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-014 - MachDeepLearnMultRetr\nEnseignant
+ s : Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et
+  gestion\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Data
+  Science and Artifical Intelligence\, &lt\;.MA60 - Sc. informatiques&gt\; 
+ Data Science and Artificial Intelligence\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-014 - MachDeepLearnMultRetr<br/>En
+ seignants : Mme COOLS\, M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil info
+ rmatique et gestion\, FS AIDA<br/>Groupe : &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. infor
+ matiques&gt\; Data Science and Artificial Intelligence<br/>Salle : Ho.IGLa
+ b<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-156683-26-Ho.IGLab-Index-Education
+DTSTART:20260302T123000Z
+DTEND:20260302T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-014 - MachDeepLearnMultRetr - Mme COOLS\, M. MAH
+ MOUDI - .MAB1 - Ir. civil informatique et gestion\, FS AIDA - <.MAB1 - Sc.
+  informatiques\, FA> Data Science and Artifical Intelligence\, <.MA60 - Sc
+ . informatiques> Data Science and Artificial Intelligence - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-014 - MachDeepLearnMultRetr\nEnseignant
+ s : Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et
+  gestion\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Data
+  Science and Artifical Intelligence\, &lt\;.MA60 - Sc. informatiques&gt\; 
+ Data Science and Artificial Intelligence\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-014 - MachDeepLearnMultRetr<br/>En
+ seignants : Mme COOLS\, M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil info
+ rmatique et gestion\, FS AIDA<br/>Groupe : &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. infor
+ matiques&gt\; Data Science and Artificial Intelligence<br/>Salle : Ho.IGLa
+ b<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-156683-27-Ho.IGLab-Index-Education
+DTSTART:20260309T123000Z
+DTEND:20260309T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-014 - MachDeepLearnMultRetr - Mme COOLS\, M. MAH
+ MOUDI - .MAB1 - Ir. civil informatique et gestion\, FS AIDA - <.MAB1 - Sc.
+  informatiques\, FA> Data Science and Artifical Intelligence\, <.MA60 - Sc
+ . informatiques> Data Science and Artificial Intelligence - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-014 - MachDeepLearnMultRetr\nEnseignant
+ s : Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et
+  gestion\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Data
+  Science and Artifical Intelligence\, &lt\;.MA60 - Sc. informatiques&gt\; 
+ Data Science and Artificial Intelligence\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-014 - MachDeepLearnMultRetr<br/>En
+ seignants : Mme COOLS\, M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil info
+ rmatique et gestion\, FS AIDA<br/>Groupe : &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. infor
+ matiques&gt\; Data Science and Artificial Intelligence<br/>Salle : Ho.IGLa
+ b<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-219017-30-Ho.IGLab-Index-Education
+DTSTART:20260330T113000Z
+DTEND:20260330T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-208 - Cloud and Edge Computing - M. BENDJELLOUL\
+ , Mme COOLS\, M. MAHMOUDI - .MAB1 - Ir. civil informatique et gestion\, FS
+  Cybersecurity - <.MA60 - Sc. informatiques> Software Development\, <.MAB1
+  - Sc. informatiques\, FA> Software Development - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-208 - Cloud and Edge Computing\nEnseign
+ ants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. c
+ ivil informatique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-208 - Cloud and Edge Computing<br/
+ >Enseignants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI<br/>Formation : .M
+ AB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Groupe : &l
+ t\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. 
+ informatiques\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type
+  : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-219017-32-Ho.IGLab-Index-Education
+DTSTART:20260413T113000Z
+DTEND:20260413T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-208 - Cloud and Edge Computing - M. BENDJELLOUL\
+ , Mme COOLS\, M. MAHMOUDI - .MAB1 - Ir. civil informatique et gestion\, FS
+  Cybersecurity - <.MA60 - Sc. informatiques> Software Development\, <.MAB1
+  - Sc. informatiques\, FA> Software Development - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-208 - Cloud and Edge Computing\nEnseign
+ ants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. c
+ ivil informatique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-208 - Cloud and Edge Computing<br/
+ >Enseignants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI<br/>Formation : .M
+ AB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Groupe : &l
+ t\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. 
+ informatiques\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type
+  : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-219017-36-Ho.IGLab-Index-Education
+DTSTART:20260511T113000Z
+DTEND:20260511T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-208 - Cloud and Edge Computing - M. BENDJELLOUL\
+ , Mme COOLS\, M. MAHMOUDI - .MAB1 - Ir. civil informatique et gestion\, FS
+  Cybersecurity - <.MA60 - Sc. informatiques> Software Development\, <.MAB1
+  - Sc. informatiques\, FA> Software Development - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-208 - Cloud and Edge Computing\nEnseign
+ ants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI\nFormation : .MAB1 - Ir. c
+ ivil informatique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-208 - Cloud and Edge Computing<br/
+ >Enseignants : M. BENDJELLOUL\, Mme COOLS\, M. MAHMOUDI<br/>Formation : .M
+ AB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Groupe : &l
+ t\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. 
+ informatiques\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type
+  : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-247463-5-Ho.IGLab-Index-Education
+DTSTART:20251006T061500Z
+DTEND:20251006T081500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-247463-6-Ho.IGLab-Index-Education
+DTSTART:20251013T061500Z
+DTEND:20251013T081500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-247463-7-Ho.IGLab-Index-Education
+DTSTART:20251020T061500Z
+DTEND:20251020T081500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:Cours-268052-9-Ho.IGLab-Index-Education
+DTSTART:20251105T123000Z
+DTEND:20251105T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-223 - Internet of Everything : proje - M. DELEHO
+ UZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique et gesti
+ on\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-223 - Internet of Everything : proje\nE
+ nseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB2 
+ - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\n
+ Type : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-223 - Internet of Everything : pro
+ je<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK<br/>Formati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Sall
+ e : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:Cours-268052-11-Ho.IGLab-Index-Education
+DTSTART:20251119T123000Z
+DTEND:20251119T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-223 - Internet of Everything : proje - M. DELEHO
+ UZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique et gesti
+ on\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-223 - Internet of Everything : proje\nE
+ nseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB2 
+ - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\n
+ Type : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-223 - Internet of Everything : pro
+ je<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK<br/>Formati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Sall
+ e : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:Cours-268052-12-Ho.IGLab-Index-Education
+DTSTART:20251126T123000Z
+DTEND:20251126T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-223 - Internet of Everything : proje - M. DELEHO
+ UZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique et gesti
+ on\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-223 - Internet of Everything : proje\nE
+ nseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB2 
+ - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\n
+ Type : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-223 - Internet of Everything : pro
+ je<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK<br/>Formati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Sall
+ e : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:Cours-268052-14-Ho.IGLab-Index-Education
+DTSTART:20251210T123000Z
+DTEND:20251210T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-223 - Internet of Everything : proje - M. DELEHO
+ UZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique et gesti
+ on\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-223 - Internet of Everything : proje\nE
+ nseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB2 
+ - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\n
+ Type : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-223 - Internet of Everything : pro
+ je<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK<br/>Formati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Sall
+ e : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:Cours-268052-15-Ho.IGLab-Index-Education
+DTSTART:20251217T123000Z
+DTEND:20251217T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-223 - Internet of Everything : proje - M. DELEHO
+ UZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique et gesti
+ on\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-223 - Internet of Everything : proje\nE
+ nseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB2 
+ - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\n
+ Type : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-223 - Internet of Everything : pro
+ je<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK<br/>Formati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Sall
+ e : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-10-Ho.IGLab-Index-Education
+DTSTART:20251112T073000Z
+DTEND:20251112T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-11-Ho.IGLab-Index-Education
+DTSTART:20251119T073000Z
+DTEND:20251119T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-12-Ho.IGLab-Index-Education
+DTSTART:20251126T073000Z
+DTEND:20251126T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-13-Ho.IGLab-Index-Education
+DTSTART:20251203T073000Z
+DTEND:20251203T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-14-Ho.IGLab-Index-Education
+DTSTART:20251210T073000Z
+DTEND:20251210T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:Cours-271576-15-Ho.IGLab-Index-Education
+DTSTART:20251217T073000Z
+DTEND:20251217T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. inform
+ atiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1
+  - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informa
+ tique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiqu
+ es&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; So
+ ftware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK<br/>Formati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br
+ />
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-271608-2-Ho.IGLab-Index-Education
+DTSTART:20250918T063000Z
+DTEND:20250918T093000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CORON - .MA
+ B1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-007 - ApplMinPetrogr\nEnseignants : M. 
+ BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géologue\, FS\nSa
+ lles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-007 - ApplMinPetrogr<br/>Enseignan
+ ts : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-271608-3-Ho.IGLab-Index-Education
+DTSTART:20250925T063000Z
+DTEND:20250925T093000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CORON - .MA
+ B1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-007 - ApplMinPetrogr\nEnseignants : M. 
+ BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géologue\, FS\nSa
+ lles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-007 - ApplMinPetrogr<br/>Enseignan
+ ts : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-271608-4-Ho.IGLab-Index-Education
+DTSTART:20251002T063000Z
+DTEND:20251002T093000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CORON - .MA
+ B1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-007 - ApplMinPetrogr\nEnseignants : M. 
+ BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géologue\, FS\nSa
+ lles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-007 - ApplMinPetrogr<br/>Enseignan
+ ts : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-271609-7-Ho.IGLab-Index-Education
+DTSTART:20251020T113000Z
+DTEND:20251020T143000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CORON - .MA
+ B1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-007 - ApplMinPetrogr\nEnseignants : M. 
+ BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géologue\, FS\nSa
+ lles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-007 - ApplMinPetrogr<br/>Enseignan
+ ts : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-295932-8-Ho.IGLab-Index-Education
+DTSTART:20251027T073000Z
+DTEND:20251027T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-295946-12-Ho.IGLab-Index-Education
+DTSTART:20251125T073000Z
+DTEND:20251125T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS - <.B
+ AB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ant : Mme COOLS\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil - IG
+ \nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignant : Mme COOLS<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir
+  Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251103T124509Z
+UID:Cours-295953-9-Ho.IGLab-Index-Education
+DTSTART:20251104T083000Z
+DTEND:20251104T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-296419-7-Ho.IGLab-Index-Education
+DTSTART:20251023T083000Z
+DTEND:20251023T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-006 - ExpertDigLog - M. MAHMOUDI - .MAB1 - Ir. c
+ ivil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatique et
+  gestion\, FS Cybersecurity - Exercices
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-006 - ExpertDigLog\nEnseignant : M. MAH
+ MOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, 
+ .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.I
+ GLab\nType : Exercices\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-006 - ExpertDigLog<br/>Enseignant 
+ : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gestion\,
+  FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br
+ />Salle : Ho.IGLab<br/>Type : Exercices<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-297079-9-Ho.IGLab-Index-Education
+DTSTART:20251106T144500Z
+DTEND:20251106T164500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-006 - ExpertDigLog - M. MAHMOUDI - .MAB1 - Ir. c
+ ivil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatique et
+  gestion\, FS Cybersecurity - Exercices
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-006 - ExpertDigLog\nEnseignant : M. MAH
+ MOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, 
+ .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.I
+ GLab\nType : Exercices\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-006 - ExpertDigLog<br/>Enseignant 
+ : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gestion\,
+  FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br
+ />Salle : Ho.IGLab<br/>Type : Exercices<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-297220-13-Ho.IGLab-Index-Education
+DTSTART:20251201T123000Z
+DTEND:20251201T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. MAH
+ MOUDI\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity 
+ - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. informat
+ iques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1 -
+  Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informati
+ que et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiques
+ &gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Soft
+ ware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK<br/>Formation
+ s : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civi
+ l informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-297220-14-Ho.IGLab-Index-Education
+DTSTART:20251208T123000Z
+DTEND:20251208T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. MAH
+ MOUDI\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity 
+ - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. informat
+ iques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1 -
+  Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informati
+ que et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiques
+ &gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Soft
+ ware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK<br/>Formation
+ s : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civi
+ l informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-297220-15-Ho.IGLab-Index-Education
+DTSTART:20251215T123000Z
+DTEND:20251215T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. MAH
+ MOUDI\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity 
+ - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. informat
+ iques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1 -
+  Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informati
+ que et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiques
+ &gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Soft
+ ware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK<br/>Formation
+ s : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civi
+ l informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-298081-24-Ho.IGLab-Index-Education
+DTSTART:20260217T123000Z
+DTEND:20260217T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-028 - Introduction à l'intelligence - Mme COOLS\
+ , M. MAHMOUDI\, M. STASSIN - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-028 - Introduction à l'intelligence\nEn
+ seignants : Mme COOLS\, M. MAHMOUDI\, M. STASSIN\nGroupe : &lt\;.BAB3 - Ir
+ . civil&gt\; BAB3 - Ir Civil - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-028 - Introduction à l'intelligenc
+ e<br/>Enseignants : Mme COOLS\, M. MAHMOUDI\, M. STASSIN<br/>Groupe : &lt\
+ ;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type
+  : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-298081-25-Ho.IGLab-Index-Education
+DTSTART:20260224T123000Z
+DTEND:20260224T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-028 - Introduction à l'intelligence - Mme COOLS\
+ , M. MAHMOUDI\, M. STASSIN - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-028 - Introduction à l'intelligence\nEn
+ seignants : Mme COOLS\, M. MAHMOUDI\, M. STASSIN\nGroupe : &lt\;.BAB3 - Ir
+ . civil&gt\; BAB3 - Ir Civil - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-028 - Introduction à l'intelligenc
+ e<br/>Enseignants : Mme COOLS\, M. MAHMOUDI\, M. STASSIN<br/>Groupe : &lt\
+ ;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type
+  : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299190-29-Ho.IGLab-Index-Education
+DTSTART:20260327T073000Z
+DTEND:20260327T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. DELEHOUZEE\, M. H
+ ANI\, M. MAHMOUDI\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestio
+ n\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignants 
+ : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB1 -
+  Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nT
+ ype : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignants : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK<br/>Formatio
+ n : .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Salle
+  : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299190-30-Ho.IGLab-Index-Education
+DTSTART:20260403T063000Z
+DTEND:20260403T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. DELEHOUZEE\, M. H
+ ANI\, M. MAHMOUDI\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestio
+ n\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignants 
+ : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB1 -
+  Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nT
+ ype : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignants : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK<br/>Formatio
+ n : .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Salle
+  : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299190-31-Ho.IGLab-Index-Education
+DTSTART:20260410T063000Z
+DTEND:20260410T103000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. DELEHOUZEE\, M. H
+ ANI\, M. MAHMOUDI\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestio
+ n\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignants 
+ : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK\nFormation : .MAB1 -
+  Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nT
+ ype : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignants : M. DELEHOUZEE\, M. HANI\, M. MAHMOUDI\, M. VANSNICK<br/>Formatio
+ n : .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Salle
+  : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-22-Ho.IGLab-Index-Education
+DTSTART:20260203T093000Z
+DTEND:20260203T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-23-Ho.IGLab-Index-Education
+DTSTART:20260210T093000Z
+DTEND:20260210T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-24-Ho.IGLab-Index-Education
+DTSTART:20260217T093000Z
+DTEND:20260217T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-25-Ho.IGLab-Index-Education
+DTSTART:20260224T093000Z
+DTEND:20260224T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-26-Ho.IGLab-Index-Education
+DTSTART:20260303T093000Z
+DTEND:20260303T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299191-27-Ho.IGLab-Index-Education
+DTSTART:20260310T093000Z
+DTEND:20260310T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-015 - Mobile applications - M. MAHMOUDI - .MAB1 
+ - Ir. civil informatique et gestion\, FS Cybersecurity - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-015 - Mobile applications\nEnseignant :
+  M. MAHMOUDI\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS C
+ ybersecurity\nSalle : Ho.IGLab\nType : Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-015 - Mobile applications<br/>Ense
+ ignant : M. MAHMOUDI<br/>Formation : .MAB1 - Ir. civil informatique et ges
+ tion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299195-26-Ho.IGLab-Index-Education
+DTSTART:20260306T123000Z
+DTEND:20260306T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-250 - Trusted Computing - M. DUPONT - .MAB1 - Ir
+ . civil informatique et gestion\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-250 - Trusted Computing\nEnseignant : M
+ . DUPONT\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS Cyber
+ security\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-250 - Trusted Computing<br/>Enseig
+ nant : M. DUPONT<br/>Formation : .MAB1 - Ir. civil informatique et gestion
+ \, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299195-27-Ho.IGLab-Index-Education
+DTSTART:20260313T123000Z
+DTEND:20260313T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-250 - Trusted Computing - M. DUPONT - .MAB1 - Ir
+ . civil informatique et gestion\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-250 - Trusted Computing\nEnseignant : M
+ . DUPONT\nFormation : .MAB1 - Ir. civil informatique et gestion\, FS Cyber
+ security\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-250 - Trusted Computing<br/>Enseig
+ nant : M. DUPONT<br/>Formation : .MAB1 - Ir. civil informatique et gestion
+ \, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-29-Ho.IGLab-Index-Education
+DTSTART:20260327T123000Z
+DTEND:20260327T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-30-Ho.IGLab-Index-Education
+DTSTART:20260403T113000Z
+DTEND:20260403T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-31-Ho.IGLab-Index-Education
+DTSTART:20260410T113000Z
+DTEND:20260410T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-32-Ho.IGLab-Index-Education
+DTSTART:20260417T113000Z
+DTEND:20260417T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-35-Ho.IGLab-Index-Education
+DTSTART:20260508T113000Z
+DTEND:20260508T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-299594-36-Ho.IGLab-Index-Education
+DTSTART:20260515T113000Z
+DTEND:20260515T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-209 - Cloud and Edge Computing : Pro - M. BENDJE
+ LLOUL\, M. BENKEDADRA\, M. MAHMOUDI - <.MAB2 - Ir. civil informatique et g
+ estion\, FS AIDA> Recent trends in Computing - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-209 - Cloud and Edge Computing : Pro\nE
+ nseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI\nOption : &lt\;.
+ MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent trends in C
+ omputing\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-209 - Cloud and Edge Computing : P
+ ro<br/>Enseignants : M. BENDJELLOUL\, M. BENKEDADRA\, M. MAHMOUDI<br/>Opti
+ on : &lt\;.MAB2 - Ir. civil informatique et gestion\, FS AIDA&gt\; Recent 
+ trends in Computing<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250127T074723Z
+UID:Cours-305099-1-Ho.IGLab-Index-Education
+DTSTART:20250908T103000Z
+DTEND:20250908T143000Z
+SUMMARY;LANGUAGE=fr:Evénement - DCOM - Welcome week
+LOCATION;LANGUAGE=fr:Ho.06PC\, Ho.AteliersArchi\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : Evénement - DCOM\nSalles : Ho.06PC\, Ho.Atelie
+ rsArchi\, Ho.IGLab\nMémo : Welcome week\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : Evénement - DCOM<br/>Salles : Ho.06PC\, H
+ o.AteliersArchi\, Ho.IGLab<br/>Mémo : Welcome week<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250127T074723Z
+UID:Cours-305109-1-Ho.IGLab-Index-Education
+DTSTART:20250909T073000Z
+DTEND:20250909T103000Z
+SUMMARY;LANGUAGE=fr:Evénement - DCOM - Welcome week
+LOCATION;LANGUAGE=fr:Ho.06PC\, Ho.AteliersArchi\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : Evénement - DCOM\nSalles : Ho.06PC\, Ho.Atelie
+ rsArchi\, Ho.IGLab\nMémo : Welcome week\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : Evénement - DCOM<br/>Salles : Ho.06PC\, H
+ o.AteliersArchi\, Ho.IGLab<br/>Mémo : Welcome week<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-311805-15-Ho.IGLab-Index-Education
+DTSTART:20251218T123000Z
+DTEND:20251218T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-220 - Internet des objets - M. DELEHOUZEE\, M. M
+ AHMOUDI\, M. NAJEM - .MAB2 - Ir. civil informatique et gestion\, FS Cybers
+ ecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-220 - Internet des objets\nEnseignants 
+ : M. DELEHOUZEE\, M. MAHMOUDI\, M. NAJEM\nFormation : .MAB2 - Ir. civil in
+ formatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-220 - Internet des objets<br/>Ense
+ ignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. NAJEM<br/>Formation : .MAB2 - I
+ r. civil informatique et gestion\, FS Cybersecurity<br/>Salle : Ho.IGLab<b
+ r/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312285-9-Ho.IGLab-Index-Education
+DTSTART:20251106T123000Z
+DTEND:20251106T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-006 - ExpertDigLog - M. MAHMOUDI - .MAB1 - Ir. c
+ ivil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatique et
+  gestion\, FS Cybersecurity - Exercices
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-006 - ExpertDigLog\nEnseignant : M. MAH
+ MOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, 
+ .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle : Ho.I
+ GLab\nType : Exercices\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-006 - ExpertDigLog<br/>Enseignant 
+ : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gestion\,
+  FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br
+ />Salle : Ho.IGLab<br/>Type : Exercices<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312294-9-Ho.IGLab-Index-Education
+DTSTART:20251106T071500Z
+DTEND:20251106T101500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312294-10-Ho.IGLab-Index-Education
+DTSTART:20251113T071500Z
+DTEND:20251113T101500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312294-11-Ho.IGLab-Index-Education
+DTSTART:20251120T071500Z
+DTEND:20251120T101500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312294-13-Ho.IGLab-Index-Education
+DTSTART:20251204T071500Z
+DTEND:20251204T101500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312309-5-Ho.IGLab-Index-Education
+DTSTART:20251006T113000Z
+DTEND:20251006T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-312309-6-Ho.IGLab-Index-Education
+DTSTART:20251013T113000Z
+DTEND:20251013T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-027 - AdvTopArtifIntel - M. DUPONT - .MAB1 - Ir.
+  civil informatique et gestion\, FS AIDA\, .MAB1 - Sc. informatiques\, FS 
+ AIDA - <.MAB1 - Sc. informatiques\, FA> Data Science and Artifical Intelli
+ gence\, <.MA60 - Sc. informatiques> Data Science and Artificial Intelligen
+ ce - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-027 - AdvTopArtifIntel\nEnseignant : M.
+  DUPONT\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\
+ , .MAB1 - Sc. informatiques\, FS AIDA\nGroupe : &lt\;.MAB1 - Sc. informati
+ ques\, FA&gt\; Data Science and Artifical Intelligence\, &lt\;.MA60 - Sc. 
+ informatiques&gt\; Data Science and Artificial Intelligence\nSalle : Ho.IG
+ Lab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-027 - AdvTopArtifIntel<br/>Enseign
+ ant : M. DUPONT<br/>Formations : .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Sc. informatiques\, FS AIDA<br/>Groupe : &lt\;.MAB1 -
+  Sc. informatiques\, FA&gt\; Data Science and Artifical Intelligence\, &lt
+ \;.MA60 - Sc. informatiques&gt\; Data Science and Artificial Intelligence<
+ br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313510-9-Ho.IGLab-Index-Education
+DTSTART:20251103T144500Z
+DTEND:20251103T164500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313510-10-Ho.IGLab-Index-Education
+DTSTART:20251110T144500Z
+DTEND:20251110T164500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313510-11-Ho.IGLab-Index-Education
+DTSTART:20251117T144500Z
+DTEND:20251117T164500Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313513-12-Ho.IGLab-Index-Education
+DTSTART:20251124T123000Z
+DTEND:20251124T163000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. MAH
+ MOUDI\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique et gestion
+ \, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity 
+ - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - Sc. informat
+ iques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK\nFormations : .MAB1 -
+  Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informati
+ que et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. informatiques
+ &gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Soft
+ ware Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK<br/>Formation
+ s : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civi
+ l informatique et gestion\, FS Cybersecurity<br/>Groupe : &lt\;.MA60 - Sc.
+  informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\
+ , FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-4-Ho.IGLab-Index-Education
+DTSTART:20251003T113000Z
+DTEND:20251003T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-5-Ho.IGLab-Index-Education
+DTSTART:20251010T113000Z
+DTEND:20251010T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-6-Ho.IGLab-Index-Education
+DTSTART:20251017T113000Z
+DTEND:20251017T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-7-Ho.IGLab-Index-Education
+DTSTART:20251024T113000Z
+DTEND:20251024T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-9-Ho.IGLab-Index-Education
+DTSTART:20251107T123000Z
+DTEND:20251107T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-10-Ho.IGLab-Index-Education
+DTSTART:20251114T123000Z
+DTEND:20251114T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-11-Ho.IGLab-Index-Education
+DTSTART:20251121T123000Z
+DTEND:20251121T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-12-Ho.IGLab-Index-Education
+DTSTART:20251128T123000Z
+DTEND:20251128T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-13-Ho.IGLab-Index-Education
+DTSTART:20251205T123000Z
+DTEND:20251205T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-313684-14-Ho.IGLab-Index-Education
+DTSTART:20251212T123000Z
+DTEND:20251212T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-024 - Modélisation des données - Mme COOLS\, M. 
+ MAHMOUDI - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-024 - Modélisation des données\nEnseign
+ ants : Mme COOLS\, M. MAHMOUDI\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 
+ - Ir Civil - IG\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-024 - Modélisation des données<br/
+ >Enseignants : Mme COOLS\, M. MAHMOUDI<br/>Groupe : &lt\;.BAB3 - Ir. civil
+ &gt\; BAB3 - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-314054-12-Ho.IGLab-Index-Education
+DTSTART:20251127T123000Z
+DTEND:20251127T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-220 - Internet des objets - M. DELEHOUZEE\, M. N
+ AJEM - .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-220 - Internet des objets\nEnseignants 
+ : M. DELEHOUZEE\, M. NAJEM\nFormation : .MAB2 - Ir. civil informatique et 
+ gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-220 - Internet des objets<br/>Ense
+ ignants : M. DELEHOUZEE\, M. NAJEM<br/>Formation : .MAB2 - Ir. civil infor
+ matique et gestion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : TP<b
+ r/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-314054-13-Ho.IGLab-Index-Education
+DTSTART:20251204T123000Z
+DTEND:20251204T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-220 - Internet des objets - M. DELEHOUZEE\, M. M
+ AHMOUDI\, M. NAJEM - .MAB2 - Ir. civil informatique et gestion\, FS Cybers
+ ecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-220 - Internet des objets\nEnseignants 
+ : M. DELEHOUZEE\, M. MAHMOUDI\, M. NAJEM\nFormation : .MAB2 - Ir. civil in
+ formatique et gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-220 - Internet des objets<br/>Ense
+ ignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. NAJEM<br/>Formation : .MAB2 - I
+ r. civil informatique et gestion\, FS Cybersecurity<br/>Salle : Ho.IGLab<b
+ r/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-314054-14-Ho.IGLab-Index-Education
+DTSTART:20251211T123000Z
+DTEND:20251211T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-220 - Internet des objets - M. DELEHOUZEE\, M. N
+ AJEM - .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-220 - Internet des objets\nEnseignants 
+ : M. DELEHOUZEE\, M. NAJEM\nFormation : .MAB2 - Ir. civil informatique et 
+ gestion\, FS Cybersecurity\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-220 - Internet des objets<br/>Ense
+ ignants : M. DELEHOUZEE\, M. NAJEM<br/>Formation : .MAB2 - Ir. civil infor
+ matique et gestion\, FS Cybersecurity<br/>Salle : Ho.IGLab<br/>Type : TP<b
+ r/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-336792-9-Ho.IGLab-Index-Education
+DTSTART:20251104T123000Z
+DTEND:20251104T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-336792-11-Ho.IGLab-Index-Education
+DTSTART:20251118T123000Z
+DTEND:20251118T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-336792-12-Ho.IGLab-Index-Education
+DTSTART:20251125T123000Z
+DTEND:20251125T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-336792-13-Ho.IGLab-Index-Education
+DTSTART:20251202T123000Z
+DTEND:20251202T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-336792-14-Ho.IGLab-Index-Education
+DTSTART:20251209T123000Z
+DTEND:20251209T153000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-337362-9-Ho.IGLab-Index-Education
+DTSTART:20251103T123000Z
+DTEND:20251103T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-337362-10-Ho.IGLab-Index-Education
+DTSTART:20251110T123000Z
+DTEND:20251110T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-337362-11-Ho.IGLab-Index-Education
+DTSTART:20251117T123000Z
+DTEND:20251117T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. MAHMOUDI - .MAB1 - I
+ r. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatiqu
+ e et gestion\, FS Cybersecurity - <.MA60 - Sc. informatiques> Software Dev
+ elopment\, <.MAB1 - Sc. informatiques\, FA> Software Development - Cours
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignant : M.
+  MAHMOUDI\nFormations : .MAB1 - Ir. civil informatique et gestion\, FS AID
+ A\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity\nGroupe :
+  &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - S
+ c. informatiques\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : 
+ Cours\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ant : M. MAHMOUDI<br/>Formations : .MAB1 - Ir. civil informatique et gesti
+ on\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurit
+ y<br/>Groupe : &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, 
+ &lt\;.MAB1 - Sc. informatiques\, FA&gt\; Software Development<br/>Salle : 
+ Ho.IGLab<br/>Type : Cours<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250527T144932Z
+UID:Cours-337365-15-Ho.IGLab-Index-Education
+DTSTART:20251215T073000Z
+DTEND:20251215T113000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL\, M. DEL
+ EHOUZEE\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informa
+ tique et gestion\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, F
+ S Cybersecurity - <.MA60 - Sc. informatiques> Software Development\, <.MAB
+ 1 - Sc. informatiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-007 - ProjExpertDigLog\nEnseignants : M
+ . BENDJELLOUL\, M. DELEHOUZEE\, M. MAHMOUDI\, M. ROUKH\, M. VANSNICK\nForm
+ ations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir.
+  civil informatique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - S
+ c. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatique
+ s\, FA&gt\; Software Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-007 - ProjExpertDigLog<br/>Enseign
+ ants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. MAHMOUDI\, M. ROUKH\, M. VANSNI
+ CK<br/>Formations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, 
+ .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Groupe : 
+ &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc
+ . informatiques\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Ty
+ pe : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251124T104156Z
+UID:Cours-339846-11-Ho.IGLab-Index-Education
+DTSTART:20251118T073000Z
+DTEND:20251118T103000Z
+SUMMARY;LANGUAGE=fr:I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CORON - .MA
+ B1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-GEOL-007 - ApplMinPetrogr\nEnseignants : M. 
+ BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géologue\, FS\nSa
+ lles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-GEOL-007 - ApplMinPetrogr<br/>Enseignan
+ ts : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250905T081512Z
+UID:Cours-352957-6-Ho.IGLab-Index-Education
+DTSTART:20251015T113000Z
+DTEND:20251015T143000Z
+SUMMARY;LANGUAGE=fr:I-ILIA-004 - Modélisation et programmation - M. DUPONT 
+ - <.BAB3 - Ir. civil> BAB3 - Ir Civil - IG - TP
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-ILIA-004 - Modélisation et programmation\nEn
+ seignant : M. DUPONT\nGroupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3 - Ir Civil
+  - IG\nSalle : Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-ILIA-004 - Modélisation et programmatio
+ n<br/>Enseignant : M. DUPONT<br/>Groupe : &lt\;.BAB3 - Ir. civil&gt\; BAB3
+  - Ir Civil - IG<br/>Salle : Ho.IGLab<br/>Type : TP<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20250919T060311Z
+UID:Cours-354604-3-Ho.IGLab-Index-Education
+DTSTART:20250923T103000Z
+DTEND:20250923T113000Z
+SUMMARY;LANGUAGE=fr:I-CPFA-002 - AteliersMéthodo - Mme RODRIGUEZ - .BAB1 - 
+ Ir. civil\, .BAB1 - Ir. civil architecte - Justine Rodriguez - Atelier pou
+ r les primo-inscrits
+LOCATION;LANGUAGE=fr:Ho.05\, Ho.06PC\, Ho.AteliersArchi\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:Aa : I-CPFA-002 - AteliersMéthodo\nEnseignant : Mme
+  RODRIGUEZ\nFormations : .BAB1 - Ir. civil\, .BAB1 - Ir. civil architecte\
+ nSalles : Ho.05\, Ho.06PC\, Ho.AteliersArchi\, Ho.IGLab\nMémo : Justine Ro
+ driguez - Atelier pour les primo-inscrits\n
+X-ALT-DESC;FMTTYPE=text/html:Aa : I-CPFA-002 - AteliersMéthodo<br/>Enseigna
+ nt : Mme RODRIGUEZ<br/>Formations : .BAB1 - Ir. civil\, .BAB1 - Ir. civil 
+ architecte<br/>Salles : Ho.05\, Ho.06PC\, Ho.AteliersArchi\, Ho.IGLab<br/>
+ Mémo : Justine Rodriguez - Atelier pour les primo-inscrits<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251015T080539Z
+UID:COURSANNULE-6651-9-Ho.IGLab-Index-Education
+DTSTART:20251105T073000Z
+DTEND:20251105T113000Z
+SUMMARY;LANGUAGE=fr:ANNULÉ : I-ILIA-007 - ProjExpertDigLog - M. BENDJELLOUL
+ \, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK - .MAB1 - Ir. civil informatique
+  et gestion\, FS AIDA\, .MAB1 - Ir. civil informatique et gestion\, FS Cyb
+ ersecurity - <.MA60 - Sc. informatiques> Software Development\, <.MAB1 - S
+ c. informatiques\, FA> Software Development - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:ANNULÉ : \nAa : I-ILIA-007 - ProjExpertDigLog\nEnse
+ ignants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNICK\nFormati
+ ons : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, .MAB1 - Ir. ci
+ vil informatique et gestion\, FS Cybersecurity\nGroupe : &lt\;.MA60 - Sc. 
+ informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc. informatiques\,
+  FA&gt\; Software Development\nSalle : Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:ANNULÉ : <br/>Aa : I-ILIA-007 - ProjExpertDigL
+ og<br/>Enseignants : M. BENDJELLOUL\, M. DELEHOUZEE\, M. ROUKH\, M. VANSNI
+ CK<br/>Formations : .MAB1 - Ir. civil informatique et gestion\, FS AIDA\, 
+ .MAB1 - Ir. civil informatique et gestion\, FS Cybersecurity<br/>Groupe : 
+ &lt\;.MA60 - Sc. informatiques&gt\; Software Development\, &lt\;.MAB1 - Sc
+ . informatiques\, FA&gt\; Software Development<br/>Salle : Ho.IGLab<br/>Ty
+ pe : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251106T124726Z
+UID:COURSANNULE-7023-10-Ho.IGLab-Index-Education
+DTSTART:20251112T123000Z
+DTEND:20251112T163000Z
+SUMMARY;LANGUAGE=fr:ANNULÉ : I-ILIA-223 - Internet of Everything : proje - 
+ M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK - .MAB2 - Ir. civil informatique
+  et gestion\, FS Cybersecurity - Projet
+LOCATION;LANGUAGE=fr:Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:ANNULÉ : \nAa : I-ILIA-223 - Internet of Everything
+  : proje\nEnseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNICK\nFormati
+ on : .MAB2 - Ir. civil informatique et gestion\, FS Cybersecurity\nSalle :
+  Ho.IGLab\nType : Projet\n
+X-ALT-DESC;FMTTYPE=text/html:ANNULÉ : <br/>Aa : I-ILIA-223 - Internet of Ev
+ erything : proje<br/>Enseignants : M. DELEHOUZEE\, M. MAHMOUDI\, M. VANSNI
+ CK<br/>Formation : .MAB2 - Ir. civil informatique et gestion\, FS Cybersec
+ urity<br/>Salle : Ho.IGLab<br/>Type : Projet<br/>
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+LAST-MODIFIED:20251124T104156Z
+UID:COURSANNULE-7358-13-Ho.IGLab-Index-Education
+DTSTART:20251202T073000Z
+DTEND:20251202T103000Z
+SUMMARY;LANGUAGE=fr:ANNULÉ : I-GEOL-007 - ApplMinPetrogr - M. BAELE\, M. CO
+ RON - .MAB1 - Ir. civil mines et géologue\, FS - TP
+LOCATION;LANGUAGE=fr:Ho.Geol118\, Ho.IGLab
+DESCRIPTION;LANGUAGE=fr:ANNULÉ : \nAa : I-GEOL-007 - ApplMinPetrogr\nEnseig
+ nants : M. BAELE\, M. CORON\nFormation : .MAB1 - Ir. civil mines et géolog
+ ue\, FS\nSalles : Ho.Geol118\, Ho.IGLab\nType : TP\n
+X-ALT-DESC;FMTTYPE=text/html:ANNULÉ : <br/>Aa : I-GEOL-007 - ApplMinPetrogr
+ <br/>Enseignants : M. BAELE\, M. CORON<br/>Formation : .MAB1 - Ir. civil m
+ ines et géologue\, FS<br/>Salles : Ho.Geol118\, Ho.IGLab<br/>Type : TP<br/
+ >
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-922-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20250927
+DTEND;VALUE=DATE:20250928
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-923-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20251101
+DTEND;VALUE=DATE:20251102
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-924-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20251111
+DTEND;VALUE=DATE:20251112
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-925-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20251220
+DTEND;VALUE=DATE:20260105
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-926-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260126
+DTEND;VALUE=DATE:20260202
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-927-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260406
+DTEND;VALUE=DATE:20260407
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-928-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260420
+DTEND;VALUE=DATE:20260504
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-929-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260514
+DTEND;VALUE=DATE:20260515
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-930-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260525
+DTEND;VALUE=DATE:20260526
+SUMMARY;LANGUAGE=fr:Férié
+END:VEVENT
+BEGIN:VEVENT
+CATEGORIES:HYPERPLANNING
+DTSTAMP:20251230T202810Z
+UID:Ferie-931-Ho.IGLab-Index-Education
+DTSTART;VALUE=DATE:20260706
+DTEND;VALUE=DATE:20260810
+SUMMARY;LANGUAGE=fr:Vacances
+END:VEVENT
+END:VCALENDAR

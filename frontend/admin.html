@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartIGLab - Administration</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      background: linear-gradient(45deg, #fff, #a8edea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logout-btn {
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logout-btn:hover {
+      background: rgba(255, 59, 48, 0.2);
+      border-color: #FF3B30;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    /* Upload Section */
+    .upload-zone {
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .upload-zone:hover {
+      border-color: #4CD964;
+      background: rgba(76, 217, 100, 0.1);
+    }
+
+    .upload-zone input[type="file"] {
+      display: none;
+    }
+
+    .upload-icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .btn-upload {
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #4CD964, #3AB54A);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-upload:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(76, 217, 100, 0.4);
+    }
+
+    .btn-upload:disabled {
+      background: rgba(255, 255, 255, 0.2);
+      cursor: not-allowed;
+    }
+
+    /* Chart Section */
+    .chart-container {
+      position: relative;
+      height: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .time-selector {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .time-selector button {
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .time-selector button.active {
+      background: #4CD964;
+      border-color: #4CD964;
+    }
+
+    /* Messages */
+    .message {
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    .message.success {
+      background: rgba(76, 217, 100, 0.2);
+      border: 2px solid #4CD964;
+      color: #4CD964;
+    }
+
+    .message.error {
+      background: rgba(255, 59, 48, 0.2);
+      border: 2px solid #FF3B30;
+      color: #FF3B30;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Administration SmartIGLab</h1>
+      <a href="/" class="logout-btn">Dashboard</a>
+    </header>
+
+    <!-- Configuration Rétention -->
+    <div class="card">
+      <h2>Configuration de la rétention des données</h2>
+      <div style="margin-bottom: 20px;">
+        <label for="retentionDays" style="display: block; margin-bottom: 10px; font-size: 1.1em;">
+          Nombre de jours avant suppression automatique:
+        </label>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <input type="number" id="retentionDays" min="1" max="365" 
+                 style="padding: 10px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); 
+                        background: rgba(255,255,255,0.1); color: #fff; font-size: 1.1em; width: 100px;">
+          <span style="opacity: 0.8;">jours</span>
+          <button class="btn-upload" onclick="updateRetention()" style="margin: 0;">Enregistrer</button>
+          <button class="btn-upload" onclick="triggerCleanup()" 
+                  style="margin: 0; background: linear-gradient(135deg, #FF6B6B, #EE5A52);">
+            Nettoyer maintenant
+          </button>
+        </div>
+      </div>
+      <div class="message" id="configMessage"></div>
+    </div>
+
+    <!-- Upload ICS -->
+    <div class="card">
+      <h2>Fichier Hyperplanning (.ICS)</h2>
+      <div class="upload-zone" onclick="document.getElementById('fileInput').click()">
+        <div class="upload-icon" style="font-size: 3em; margin-bottom: 15px;">+</div>
+        <p style="font-size: 1.1em; margin-bottom: 10px;">Cliquez pour sélectionner un fichier .ICS</p>
+        <p style="opacity: 0.7; font-size: 0.9em;">ou glissez-déposez ici</p>
+        <input type="file" id="fileInput" accept=".ics" onchange="handleFileSelect(event)">
+        <p id="fileName" style="margin-top: 15px; font-weight: 600;"></p>
+      </div>
+      <button class="btn-upload" id="uploadBtn" onclick="uploadFile()" disabled>Téléverser</button>
+      <div class="message" id="uploadMessage"></div>
+    </div>
+
+    <!-- Historique -->
+    <div class="card">
+      <h2>Historique Température & Humidité</h2>
+      <div class="time-selector">
+        <button class="active" onclick="loadHistory(24)">24h</button>
+        <button onclick="loadHistory(48)">48h</button>
+        <button onclick="loadHistory(168)">7 jours</button>
+      </div>
+      <div class="chart-container">
+        <canvas id="historyChart"></canvas>
+      </div>
+      <div class="message" id="chartMessage"></div>
+    </div>
+  </div>
+
+  <script>
+    let selectedFile = null;
+    let chart = null;
+
+    function handleFileSelect(event) {
+      selectedFile = event.target.files[0];
+      if (selectedFile) {
+        document.getElementById('fileName').textContent = `Fichier sélectionné: ${selectedFile.name}`;
+        document.getElementById('uploadBtn').disabled = false;
+      }
+    }
+
+    async function uploadFile() {
+      if (!selectedFile) return;
+
+      const btn = document.getElementById('uploadBtn');
+      const msg = document.getElementById('uploadMessage');
+      
+      btn.disabled = true;
+      btn.textContent = 'Téléversement en cours...';
+
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+
+      try {
+        const response = await fetch('/admin/upload-ics', {
+          method: 'POST',
+          body: formData,
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          showMessage(msg, 'success', data.message);
+          selectedFile = null;
+          document.getElementById('fileName').textContent = '';
+          document.getElementById('fileInput').value = '';
+        } else {
+          showMessage(msg, 'error', data.detail || 'Erreur lors du téléversement');
+        }
+      } catch (error) {
+        showMessage(msg, 'error', `Erreur de connexion: ${error.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Téléverser';
+      }
+    }
+
+    async function loadHistory(hours) {
+      const msg = document.getElementById('chartMessage');
+      
+      // Mettre à jour boutons actifs
+      document.querySelectorAll('.time-selector button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      try {
+        const response = await fetch(`/admin/history?hours=${hours}`, {
+          credentials: 'include'
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          renderChart(result.data);
+          if (result.count === 0) {
+            showMessage(msg, 'error', 'Aucune donnée disponible');
+          } else {
+            msg.classList.remove('show');
+          }
+        } else {
+          showMessage(msg, 'error', result.detail || 'Erreur chargement');
+        }
+      } catch (error) {
+        showMessage(msg, 'error', `Erreur: ${error.message}`);
+      }
+    }
+
+    function renderChart(data) {
+      // Trier par timestamp croissant
+      data.sort((a, b) => a.timestamp - b.timestamp);
+
+      const labels = data.map(d => {
+        const date = new Date(d.timestamp * 1000);
+        return date.toLocaleDateString('fr-FR', { 
+          month: 'short', 
+          day: 'numeric', 
+          hour: '2-digit', 
+          minute: '2-digit' 
+        });
+      });
+
+      const temperatures = data.map(d => d.temperature);
+      const humidities = data.map(d => d.humidity);
+
+      if (chart) {
+        chart.destroy();
+      }
+
+      const ctx = document.getElementById('historyChart').getContext('2d');
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Température (°C)',
+              data: temperatures,
+              borderColor: '#FF6B6B',
+              backgroundColor: 'rgba(255, 107, 107, 0.1)',
+              tension: 0.4,
+              yAxisID: 'y'
+            },
+            {
+              label: 'Humidité (%)',
+              data: humidities,
+              borderColor: '#4ECDC4',
+              backgroundColor: 'rgba(78, 205, 196, 0.1)',
+              tension: 0.4,
+              yAxisID: 'y1'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: '#fff',
+                font: { size: 14 }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { 
+                color: '#fff',
+                maxRotation: 45,
+                minRotation: 45
+              },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
+            },
+            y: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+              title: {
+                display: true,
+                text: 'Température (°C)',
+                color: '#FF6B6B'
+              },
+              ticks: { color: '#FF6B6B' },
+              grid: { color: 'rgba(255, 255, 255, 0.1)' }
+            },
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'right',
+              title: {
+                display: true,
+                text: 'Humidité (%)',
+                color: '#4ECDC4'
+              },
+              ticks: { color: '#4ECDC4' },
+              grid: { drawOnChartArea: false }
+            }
+          }
+        }
+      });
+    }
+
+    function showMessage(element, type, text) {
+      element.className = `message ${type} show`;
+      element.textContent = text;
+      setTimeout(() => element.classList.remove('show'), 5000);
+    }
+
+    // Fonctions de configuration
+    async function loadConfig() {
+      try {
+        const response = await fetch('/admin/config', {
+          credentials: 'include'
+        });
+        const data = await response.json();
+        if (data.success) {
+          document.getElementById('retentionDays').value = data.db_retention_days;
+        }
+      } catch (error) {
+        console.error('Erreur chargement config:', error);
+      }
+    }
+
+    async function updateRetention() {
+      const days = parseInt(document.getElementById('retentionDays').value);
+      const msg = document.getElementById('configMessage');
+
+      if (days < 1 || days > 365) {
+        showMessage(msg, 'error', 'Le nombre de jours doit être entre 1 et 365');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/admin/config?retention_days=${days}`, {
+          method: 'POST',
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showMessage(msg, 'success', data.message);
+        } else {
+          showMessage(msg, 'error', data.detail || 'Erreur mise à jour');
+        }
+      } catch (error) {
+        showMessage(msg, 'error', `Erreur: ${error.message}`);
+      }
+    }
+
+    async function triggerCleanup() {
+      const msg = document.getElementById('configMessage');
+
+      if (!confirm('Voulez-vous vraiment nettoyer les anciennes données maintenant ?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch('/admin/cleanup', {
+          method: 'POST',
+          credentials: 'include'
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          showMessage(msg, 'success', data.message);
+        } else {
+          showMessage(msg, 'error', data.detail || 'Erreur nettoyage');
+        }
+      } catch (error) {
+        showMessage(msg, 'error', `Erreur: ${error.message}`);
+      }
+    }
+
+    // Charger l'historique et config au démarrage
+    window.addEventListener('DOMContentLoaded', () => {
+      loadConfig();
+      loadHistory(24);
+    });
+
+    // Drag & Drop
+    const uploadZone = document.querySelector('.upload-zone');
+    
+    uploadZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadZone.style.borderColor = '#4CD964';
+      uploadZone.style.background = 'rgba(76, 217, 100, 0.1)';
+    });
+
+    uploadZone.addEventListener('dragleave', () => {
+      uploadZone.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+      uploadZone.style.background = 'transparent';
+    });
+
+    uploadZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadZone.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+      uploadZone.style.background = 'transparent';
+      
+      const file = e.dataTransfer.files[0];
+      if (file && file.name.endsWith('.ics')) {
+        selectedFile = file;
+        document.getElementById('fileName').textContent = `Fichier sélectionné: ${file.name}`;
+        document.getElementById('uploadBtn').disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -2,8 +2,7 @@
 
 # === SECRETS ===
 SmartIGLab/backend/app/.env
-SmartIGLab/firmware/esp32_webserver/config.h
-SmartIGLab/backend/schedule.ical
+SmartIGLab/backend/Edt_Ho_IGLab.ics
 
 # === PYTHON ===
 __pycache__/

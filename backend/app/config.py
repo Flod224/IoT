@@ -47,11 +47,20 @@ class Settings(BaseSettings):
     hyperplanning_use_ics: bool = False  # False=JSON, True=ICS
     hyperplanning_refresh_interval: float = 60.0  # Mise à jour toutes les 1min
     
+    # === BASE DE DONNÉES ===
+    db_retention_days: int = 30  # Nombre de jours de conservation des données
+    
     cors_origins: str = "*"  # Origins CORS autorisées (GET uniquement)
     
     # === AUTHENTIFICATION (DÉFINIR DANS .env) ===
-    dashboard_username: str = "admin"  # Par défaut, CHANGER dans .env!
+    # Utilisateur simple (accès dashboard uniquement)
+    dashboard_username: str = "user"  # Par défaut, CHANGER dans .env!
     dashboard_password: str = "changeme"  # Par défaut, CHANGER dans .env!
+    
+    # Administrateur (accès interface admin + dashboard)
+    admin_username: str = "admin"  # Par défaut, CHANGER dans .env!
+    admin_password: str = "changeme_admin"  # Par défaut, CHANGER dans .env!
+    
     api_key: str = "changeme_api_key"  # Clé API pour services internes (Node-RED) CHANGER dans .env!
     
     class Config:

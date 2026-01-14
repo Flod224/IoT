@@ -309,6 +309,33 @@
       background: rgba(255, 59, 48, 0.3);
     }
 
+    /* ADMIN LINK */
+    .admin-link {
+      position: fixed;
+      top: 60px;
+      right: 15px;
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .admin-link:hover {
+      background: rgba(76, 217, 100, 0.2);
+      border-color: rgba(76, 217, 100, 0.6);
+      transform: translateY(-1px);
+    }
+
     /* =====================================================
        ANIMATIONS
        ===================================================== */
@@ -355,11 +382,13 @@
     </svg>
   </button>
 
+  <a href="/admin" class="admin-link" id="adminLink" title="Administration">⚙️</a>
+
   <div class="container">
     <header>
       <div class="current-time" id="currentTime">⏰ --:--</div>
       <div class="header-center">
-        <h1>🎓 SmartIGLab</h1>
+        <h1>SmartIGLab</h1>
         <div id="status" class="loading">🔄 Connexion en cours...</div>
       </div>
       <div class="header-spacer"></div>
@@ -404,7 +433,7 @@
         .then(data => {
           if (!data || typeof data !== 'object' || data.error) {
             document.getElementById('status').className = 'error';
-            document.getElementById('status').innerHTML = '<span>⚠️</span> Erreur système';
+            document.getElementById('status').innerHTML = '<span></span> Erreur système';
             
             if (isFirstLoad) {
               document.getElementById('content').innerHTML = 
@@ -433,12 +462,12 @@
         })
         .catch(e => {
           document.getElementById('status').className = 'error';
-          document.getElementById('status').innerHTML = '<span>✗</span> Erreur de connexion';
+          document.getElementById('status').innerHTML = '<span></span> Erreur de connexion';
           document.getElementById('status').style.display = 'inline-flex';
           
           if (isFirstLoad) {
             document.getElementById('content').innerHTML = 
-              '<div class="card"><div class="card-icon">⚠️</div><h2>Service indisponible</h2><p>Vérifiez la connexion réseau</p></div>';
+              '<div class="card"><div class="card-icon"></div><h2>Service indisponible</h2><p>Vérifiez la connexion réseau</p></div>';
           }
         });
     }
@@ -571,6 +600,29 @@
     setInterval(updateClock, 60000);
     updateData();
     setInterval(updateData, 5000);
+
+    // Masquer le bouton admin pour les utilisateurs simples
+    async function checkUserRole() {
+      try {
+        const response = await fetch('/user/info', {
+          credentials: 'include'
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success && data.role !== 'admin') {
+            const adminLink = document.getElementById('adminLink');
+            if (adminLink) {
+              adminLink.style.display = 'none';
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Erreur vérification rôle:', error);
+      }
+    }
+
+    checkUserRole();
   </script>
 </body>
 </html>
