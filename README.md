@@ -36,7 +36,10 @@ pip install -r requirements.txt
 cp app/.env.example app/.env
 nano app/.env  # Configurer identifiants admin, API key et rétention données
 
-# Lancer le script
+#Vérifier que le serveur est up
+sudo systemctl status start_https.service
+
+# Lancer le script si le lancement automatique pas fonctionnel
 chmod +x start_https.sh
 ./start_https.sh
 # Choisir: 1=JSON (démo) ou 2=ICS (calendrier réel)
@@ -55,7 +58,7 @@ chmod +x start_https.sh
 Raspberry Pi (Backend)
   ├─ YOLO vision (caméra USB)
   ├─ Capteurs GPIO (DHT22)
-  ├─ Hyperplanning (ICS/JSON)
+  ├─ Hyperplanning (ICS)
   ├─ SQLite (historique capteurs avec rétention configurable)
   └─ API FastAPI :8000 (https)
   └─ Node-RED
